@@ -40,6 +40,11 @@ module.exports = {
             baseId: `appcAT8442e7faJRH`,
             tableName: `Cases`,
           },
+          {
+            baseId: `appcAT8442e7faJRH`,
+            tableName: `Victims`,
+            mapping: { Photo: `fileNode` },
+          },
         ],
       },
     },
