@@ -1,10 +1,10 @@
 import { graphql } from "gatsby"
-import Img from "gatsby-image"
 
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 
 import Audio from "components/audio"
+import Event from "components/event"
 import Layout from "components/layout"
 import Read from "components/read"
 import SEO from "components/seo"
@@ -13,6 +13,7 @@ const CasesTemplate = ({ data }) => {
   const {
     audio,
     category,
+    events,
     status,
     summary,
     texts,
@@ -33,15 +34,30 @@ const CasesTemplate = ({ data }) => {
         <span>{status}</span>
         <p>{summary}</p>
 
-        <h2>Listen</h2>
-        {audio.map(item => (
-          <Audio audio={item}></Audio>
-        ))}
+        <section>
+          <h2>Events</h2>
+          <ul>
+            <li>
+              {events.map(event => (
+                <Event event={event} />
+              ))}
+            </li>
+          </ul>
+        </section>
 
-        <h2>Read</h2>
-        {texts.map(text => (
-          <Read text={text} />
-        ))}
+        <section>
+          <h2>Listen</h2>
+          {audio.map(item => (
+            <Audio audio={item}></Audio>
+          ))}
+        </section>
+
+        <section>
+          <h2>Read</h2>
+          {texts.map(text => (
+            <Read text={text} />
+          ))}
+        </section>
       </main>
     </Layout>
   )
@@ -85,6 +101,14 @@ export const query = graphql`
                   sourceName: Source_Name
                   linkText: Link_Text
                   url: URL
+                }
+              }
+              events: Events {
+                data {
+                  date: Date(formatString: "MMMM DD, YYYY")
+                  description: Description
+                  time: Time(formatString: "hh:mm a")
+                  title: Title
                 }
               }
             }

@@ -1,5 +1,4 @@
 import { Link, graphql } from "gatsby"
-import Img from "gatsby-image"
 
 /** @jsx jsx */
 import { jsx } from "theme-ui"
@@ -40,6 +39,8 @@ const CasesPage = ({ data }) => {
                 <Link to={`cases/${slug}`}>View the Case</Link>
               </article>
             )
+          } else {
+            return <p>Fuck</p>
           }
         })}
       </main>

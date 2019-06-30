@@ -1,5 +1,3 @@
-import { graphql } from "gatsby"
-
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 
