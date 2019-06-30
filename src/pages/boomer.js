@@ -4,8 +4,8 @@ import Img from "gatsby-image"
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from "components/layout"
+import SEO from "components/seo"
 
 const VictimsPage = ({ data }) => {
   return (
@@ -17,6 +17,7 @@ const VictimsPage = ({ data }) => {
           fontFamily: "body",
         }}
       >
+        <h1>Victims</h1>
         {data.allAirtable.edges.map(victim => {
           const {
             ethnicity,
@@ -34,10 +35,6 @@ const VictimsPage = ({ data }) => {
             sex,
             weight,
           } = victim.node.data
-
-          {
-            photo && console.log(victim.node.data.photo.localFiles[0])
-          }
 
           return (
             <article key={`${firstName}-{$lastName}`}>
