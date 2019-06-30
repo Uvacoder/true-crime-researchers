@@ -18,6 +18,7 @@ exports.createPages = ({ graphql, actions }) => {
             node {
               table
               data {
+                published: Published
                 slug: Slug
               }
             }
@@ -26,10 +27,12 @@ exports.createPages = ({ graphql, actions }) => {
       }
     `)
     result.data.allAirtable.edges.forEach(({ node }) => {
-      const isPage = node.table === "Cases"
+      const isPage = node.table === "Cases" && node.data.published === "true"
       createPage({
         path: `cases/${node.data.slug}`,
-        component: isPage ? path.resolve(`./src/templates/cases.jsx`) : null,
+        component: isPage
+          ? path.resolve(`./src/templates/cases.jsx`)
+          : path.resolve(`./src/templates/pending.jsx`),
         context: {
           slug: node.data.slug,
         },

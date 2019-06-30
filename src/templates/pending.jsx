@@ -4,7 +4,7 @@ import { jsx } from "theme-ui"
 import Layout from "components/layout"
 import SEO from "components/seo"
 
-const VictimsTemplate = () => {
+const PendingTemplate = () => {
   return (
     <Layout>
       <SEO title="Home" />
@@ -14,10 +14,10 @@ const VictimsTemplate = () => {
           fontFamily: "body",
         }}
       >
-        <h1>Victims Template</h1>
+        <h1>Pending Template</h1>
       </main>
     </Layout>
   )
 }
 
-export default VictimsTemplate
+export default PendingTemplate

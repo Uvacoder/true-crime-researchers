@@ -1,4 +1,4 @@
-import { graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
 
 /** @jsx jsx */
@@ -19,18 +19,28 @@ const CasesPage = ({ data }) => {
       >
         <h1>Cases</h1>
         {data.allAirtable.nodes.map(casefile => {
-          const { category, summary, title, status } = casefile.data
+          const {
+            category,
+            slug,
+            summary,
+            title,
+            published,
+            status,
+          } = casefile.data
 
-          return (
-            <article key={title}>
-              <h2>
-                {category}: {title}
-              </h2>
-              <p>
-                {status} {summary}
-              </p>
-            </article>
-          )
+          if (published === "true") {
+            return (
+              <article key={title}>
+                <h2>
+                  {category}: {title}
+                </h2>
+                <p>
+                  {status} {summary}
+                </p>
+                <Link to={`cases/${slug}`}>View the Case</Link>
+              </article>
+            )
+          }
         })}
       </main>
     </Layout>
@@ -45,6 +55,8 @@ export const query = graphql`
           title: Title
           summary: Summary
           category: Category
+          published: Published
+          slug: Slug
           status: Status
           Victims {
             data {
