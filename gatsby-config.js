@@ -39,7 +39,7 @@ module.exports = {
           {
             baseId: `appcAT8442e7faJRH`,
             tableName: `Cases`,
-            tableLinks: ["Victims", "Audio"],
+            tableLinks: ["Victims", "Audio", "Texts"],
           },
           {
             baseId: `appcAT8442e7faJRH`,
@@ -50,6 +50,11 @@ module.exports = {
           {
             baseId: `appcAT8442e7faJRH`,
             tableName: `Audio`,
+            tableLinks: ["Cases"],
+          },
+          {
+            baseId: `appcAT8442e7faJRH`,
+            tableName: `Texts`,
             tableLinks: ["Cases"],
           },
         ],

@@ -11,9 +11,11 @@ import SEO from "components/seo"
 
 const CasesTemplate = ({ data }) => {
   const {
+    audio,
     category,
     status,
     summary,
+    texts,
     title,
   } = data.allAirtable.nodes[0].data.Cases[0].data
 
@@ -32,12 +34,14 @@ const CasesTemplate = ({ data }) => {
         <p>{summary}</p>
 
         <h2>Listen</h2>
-        {data.allAirtable.nodes[0].data.Cases[0].data.audio.map(item => (
+        {audio.map(item => (
           <Audio audio={item}></Audio>
         ))}
 
         <h2>Read</h2>
-        <Read />
+        {texts.map(text => (
+          <Read text={text} />
+        ))}
       </main>
     </Layout>
   )
@@ -73,6 +77,14 @@ export const query = graphql`
                       }
                     }
                   }
+                }
+              }
+              texts: Texts {
+                data {
+                  type: Type
+                  sourceName: Source_Name
+                  linkText: Link_Text
+                  url: URL
                 }
               }
             }
