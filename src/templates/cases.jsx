@@ -7,6 +7,7 @@ import Audio from "components/audio"
 import Event from "components/event"
 import Layout from "components/layout"
 import Read from "components/read"
+import Person from "components/person"
 import SEO from "components/seo"
 import Video from "components/video"
 
@@ -15,6 +16,7 @@ const CasesTemplate = ({ data }) => {
     audio,
     category,
     events,
+    persons,
     status,
     summary,
     texts,
@@ -46,6 +48,15 @@ const CasesTemplate = ({ data }) => {
                 ))}
               </li>
             </ul>
+          </section>
+        )}
+
+        {persons && (
+          <section>
+            <h2>Persons of Interest</h2>
+            {persons.map(person => (
+              <Person person={person}></Person>
+            ))}
           </section>
         )}
 
@@ -134,6 +145,20 @@ export const query = graphql`
                   source: Source
                   title: Title
                   url: URL
+                }
+              }
+              persons: Persons_of_Interest {
+                data {
+                  description: Description
+                  name: Name
+                  personPhoto: Person_Photo {
+                    thumbnails {
+                      full {
+                        url
+                      }
+                    }
+                  }
+                  sex: Sex
                 }
               }
             }
