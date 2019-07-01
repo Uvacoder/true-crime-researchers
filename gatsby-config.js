@@ -44,7 +44,7 @@ module.exports = {
           {
             baseId: `appcAT8442e7faJRH`,
             tableName: `Cases`,
-            tableLinks: ["Audio", "Events", "Texts", "Victims"],
+            tableLinks: ["Audio", "Events", "Texts", "Victims", "Videos"],
           },
           {
             baseId: `appcAT8442e7faJRH`,
@@ -60,6 +60,11 @@ module.exports = {
             baseId: `appcAT8442e7faJRH`,
             tableName: `Victims`,
             mapping: { Photo: `fileNode` },
+            tableLinks: ["Cases"],
+          },
+          {
+            baseId: `appcAT8442e7faJRH`,
+            tableName: `Videos`,
             tableLinks: ["Cases"],
           },
         ],

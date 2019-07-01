@@ -8,6 +8,7 @@ import Event from "components/event"
 import Layout from "components/layout"
 import Read from "components/read"
 import SEO from "components/seo"
+import Video from "components/video"
 
 const CasesTemplate = ({ data }) => {
   const {
@@ -18,6 +19,7 @@ const CasesTemplate = ({ data }) => {
     summary,
     texts,
     title,
+    videos,
   } = data.allAirtable.nodes[0].data.Cases[0].data
 
   return (
@@ -34,30 +36,45 @@ const CasesTemplate = ({ data }) => {
         <span>{status}</span>
         <p>{summary}</p>
 
-        <section>
-          <h2>Events</h2>
-          <ul>
-            <li>
-              {events.map(event => (
-                <Event event={event} />
-              ))}
-            </li>
-          </ul>
-        </section>
+        {events && (
+          <section>
+            <h2>Events</h2>
+            <ul>
+              <li>
+                {events.map(event => (
+                  <Event event={event} />
+                ))}
+              </li>
+            </ul>
+          </section>
+        )}
 
-        <section>
-          <h2>Listen</h2>
-          {audio.map(item => (
-            <Audio audio={item}></Audio>
-          ))}
-        </section>
+        {videos && (
+          <section>
+            <h2>Watch</h2>
+            {videos.map(video => (
+              <Video video={video}></Video>
+            ))}
+          </section>
+        )}
 
-        <section>
-          <h2>Read</h2>
-          {texts.map(text => (
-            <Read text={text} />
-          ))}
-        </section>
+        {audio && (
+          <section>
+            <h2>Listen</h2>
+            {audio.map(item => (
+              <Audio audio={item}></Audio>
+            ))}
+          </section>
+        )}
+
+        {texts && (
+          <section>
+            <h2>Read</h2>
+            {texts.map(text => (
+              <Read text={text} />
+            ))}
+          </section>
+        )}
       </main>
     </Layout>
   )
@@ -109,6 +126,14 @@ export const query = graphql`
                   description: Description
                   time: Time(formatString: "hh:mm a")
                   title: Title
+                }
+              }
+              videos: Videos {
+                data {
+                  description: Description
+                  source: Source
+                  title: Title
+                  url: URL
                 }
               }
             }
