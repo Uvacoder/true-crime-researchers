@@ -11,6 +11,7 @@ import Person from "components/person"
 import Places from "components/places"
 import Suspect from "components/suspect"
 import SEO from "components/seo"
+import Victim from "components/victim"
 import Video from "components/video"
 
 const CasesTemplate = ({ data }) => {
@@ -25,6 +26,7 @@ const CasesTemplate = ({ data }) => {
     summary,
     texts,
     title,
+    victims,
     videos,
   } = data.allAirtable.nodes[0].data.Cases[0].data
 
@@ -41,6 +43,16 @@ const CasesTemplate = ({ data }) => {
         <h1>{title}</h1>
         <span>{status}</span>
         <p>{summary}</p>
+
+        {victims && (
+          <section>
+            <h2>Victim</h2>
+            {victims.map(victim => {
+              console.log(victim)
+              return <Victim victim={victim}></Victim>
+            })}
+          </section>
+        )}
 
         {suspects && (
           <section>
@@ -200,6 +212,32 @@ export const query = graphql`
                   sourceName: Source_Name
                   linkText: Link_Text
                   url: URL
+                }
+              }
+              victims: Victims {
+                data {
+                  firstName: First_Name
+                  middleName: Middle_Name
+                  lastName: Last_Name
+                  ethnicity: Ethnicity
+                  sex: Sex
+                  heightInFeet: Height_in_feet
+                  heightInInches: Height_in_inches
+                  weight: Weight
+                  hairColor: Hair_Color
+                  eyeColor: Eye_Color
+                  dateOfBirth: Date_of_Birth
+                  nationality: Nationality
+                  lastSeen: Last_Seen
+                  photo: Photo {
+                    localFiles {
+                      childImageSharp {
+                        fixed(width: 260) {
+                          ...GatsbyImageSharpFixed
+                        }
+                      }
+                    }
+                  }
                 }
               }
               videos: Videos {
