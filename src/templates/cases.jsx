@@ -8,6 +8,7 @@ import Event from "components/event"
 import Layout from "components/layout"
 import Read from "components/read"
 import Person from "components/person"
+import Suspect from "components/suspect"
 import SEO from "components/seo"
 import Video from "components/video"
 
@@ -18,6 +19,7 @@ const CasesTemplate = ({ data }) => {
     events,
     persons,
     status,
+    suspects,
     summary,
     texts,
     title,
@@ -37,6 +39,15 @@ const CasesTemplate = ({ data }) => {
         <h1>{title}</h1>
         <span>{status}</span>
         <p>{summary}</p>
+
+        {suspects && (
+          <section>
+            <h2>Suspect</h2>
+            {suspects.map(suspect => (
+              <Suspect suspect={suspect}></Suspect>
+            ))}
+          </section>
+        )}
 
         {events && (
           <section>
@@ -163,6 +174,28 @@ export const query = graphql`
                     }
                   }
                   sex: Sex
+                }
+              }
+              suspects: Suspects {
+                data {
+                  name: Name
+                  ethnicity: Ethnicity
+                  sex: Sex
+                  heightInFeet: Height_in_feet
+                  heightInInches: Height_in_inches
+                  weight: Weight
+                  hairColor: Hair_Color
+                  eyeColor: Eye_Color
+                  dateOfBirth: Date_of_Birth
+                  suspectPhoto: Suspect_Photo {
+                    localFiles {
+                      childImageSharp {
+                        fixed(width: 260) {
+                          ...GatsbyImageSharpFixed
+                        }
+                      }
+                    }
+                  }
                 }
               }
             }

@@ -3,7 +3,6 @@ import Img from "gatsby-image"
 
 const Person = ({ person }) => {
   const { description, name, personPhoto, sex } = person.data
-  console.log(personPhoto.localFiles[0].childImageSharp.fixed)
   return (
     <article>
       <Img
