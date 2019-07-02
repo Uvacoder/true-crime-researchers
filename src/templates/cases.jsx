@@ -8,6 +8,7 @@ import Event from "components/event"
 import Layout from "components/layout"
 import Read from "components/read"
 import Person from "components/person"
+import Places from "components/places"
 import Suspect from "components/suspect"
 import SEO from "components/seo"
 import Video from "components/video"
@@ -18,6 +19,7 @@ const CasesTemplate = ({ data }) => {
     category,
     events,
     persons,
+    places,
     status,
     suspects,
     summary,
@@ -61,6 +63,8 @@ const CasesTemplate = ({ data }) => {
             </ul>
           </section>
         )}
+
+        {places && <Places places={places} />}
 
         {persons && (
           <section>
@@ -136,28 +140,12 @@ export const query = graphql`
                   url: URL
                 }
               }
-              texts: Texts {
-                data {
-                  type: Type
-                  sourceName: Source_Name
-                  linkText: Link_Text
-                  url: URL
-                }
-              }
               events: Events {
                 data {
                   date: Date(formatString: "MMMM DD, YYYY")
                   description: Description
                   time: Time(formatString: "hh:mm a")
                   title: Title
-                }
-              }
-              videos: Videos {
-                data {
-                  description: Description
-                  source: Source
-                  title: Title
-                  url: URL
                 }
               }
               persons: Persons_of_Interest {
@@ -174,6 +162,14 @@ export const query = graphql`
                     }
                   }
                   sex: Sex
+                }
+              }
+              places: Places {
+                data {
+                  description: Description
+                  latitude: Latitude
+                  longitude: Longitude
+                  title: Title
                 }
               }
               suspects: Suspects {
@@ -196,6 +192,22 @@ export const query = graphql`
                       }
                     }
                   }
+                }
+              }
+              texts: Texts {
+                data {
+                  type: Type
+                  sourceName: Source_Name
+                  linkText: Link_Text
+                  url: URL
+                }
+              }
+              videos: Videos {
+                data {
+                  description: Description
+                  source: Source
+                  title: Title
+                  url: URL
                 }
               }
             }

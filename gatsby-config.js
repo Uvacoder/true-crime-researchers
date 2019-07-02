@@ -49,6 +49,7 @@ module.exports = {
               "Audio",
               "Events",
               "Persons_of_Interest",
+              "Places",
               "Suspects",
               "Texts",
               "Victims",
@@ -65,6 +66,11 @@ module.exports = {
             tableName: `Persons_of_Interest`,
             tableLinks: ["Cases"],
             mapping: { Person_Photo: `fileNode` },
+          },
+          {
+            baseId: `appcAT8442e7faJRH`,
+            tableName: `Places`,
+            tableLinks: ["Cases"],
           },
           {
             baseId: `appcAT8442e7faJRH`,
