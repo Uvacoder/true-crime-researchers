@@ -108,19 +108,21 @@ export const query = graphql`
               title: Title
               audio: Audio {
                 data {
-                  title: Title
-                  runtime: Runtime__in_minutes_
-                  url: URL
-                  stitcher: Stitcher
-                  source: Source
                   itunes: iTunes
                   thumbnail: Thumbnail {
-                    thumbnails {
-                      full {
-                        url
+                    localFiles {
+                      childImageSharp {
+                        fixed(width: 150) {
+                          ...GatsbyImageSharpFixed
+                        }
                       }
                     }
                   }
+                  runtime: Runtime__in_minutes_
+                  source: Source
+                  stitcher: Stitcher
+                  title: Title
+                  url: URL
                 }
               }
               texts: Texts {
@@ -152,9 +154,11 @@ export const query = graphql`
                   description: Description
                   name: Name
                   personPhoto: Person_Photo {
-                    thumbnails {
-                      full {
-                        url
+                    localFiles {
+                      childImageSharp {
+                        fixed(width: 150) {
+                          ...GatsbyImageSharpFixed
+                        }
                       }
                     }
                   }

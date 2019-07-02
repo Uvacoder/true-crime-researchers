@@ -1,4 +1,5 @@
 import React from "react"
+import Img from "gatsby-image"
 
 const Audio = ({ audio }) => {
   const {
@@ -13,11 +14,13 @@ const Audio = ({ audio }) => {
   return (
     <article>
       <h3>{title}</h3>
-      {thumbnail.map(item => (
-        <figure className="image">
-          <img alt="{source}" src={item.thumbnails.full.url} width={160} />
-        </figure>
-      ))}
+      <figure className="image">
+        <Img
+          alt="{source}"
+          fixed={thumbnail.localFiles[0].childImageSharp.fixed}
+          width={150}
+        />
+      </figure>
       <ul>
         <li>
           <a href={url}>URL</a>

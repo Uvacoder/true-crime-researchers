@@ -1,12 +1,14 @@
 import React from "react"
+import Img from "gatsby-image"
 
 const Person = ({ person }) => {
   const { description, name, personPhoto, sex } = person.data
+  console.log(personPhoto.localFiles[0].childImageSharp.fixed)
   return (
     <article>
-      <img
+      <Img
         alt="{firstName} {lastName}"
-        src={personPhoto[0].thumbnails.full.url}
+        fixed={personPhoto.localFiles[0].childImageSharp.fixed}
         width={150}
       />
       <span>{sex}</span>
