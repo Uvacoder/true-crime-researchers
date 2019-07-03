@@ -12,7 +12,7 @@ const IndexPage = ({ data }) => {
         css={{
           color: "text",
           fontFamily: "body",
-          padding: 16,
+          padding: [8, 16, 24, 32],
         }}
       >
         What to do

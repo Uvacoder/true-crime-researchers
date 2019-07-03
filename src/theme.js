@@ -1,4 +1,14 @@
 export default {
+  breakpoints: [
+    "30rem",
+    "38rem",
+    "48em",
+    "62rem",
+    "75rem",
+    "87rem",
+    "100rem",
+    "118rem",
+  ],
   fonts: {
     body: "canada-type-gibson, sans-serif",
     heading: "canada-type-gibson, sans-serif",
