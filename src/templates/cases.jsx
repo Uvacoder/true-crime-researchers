@@ -184,7 +184,28 @@ export const query = graphql`
                   title: Title
                 }
               }
-
+              suspects: Suspects {
+                data {
+                  name: Name
+                  ethnicity: Ethnicity
+                  sex: Sex
+                  heightInFeet: Height_in_feet
+                  heightInInches: Height_in_inches
+                  weight: Weight
+                  hairColor: Hair_Color
+                  eyeColor: Eye_Color
+                  dateOfBirth: Date_of_Birth
+                  suspectPhoto: Suspect_Photo {
+                    localFiles {
+                      childImageSharp {
+                        fixed(width: 260) {
+                          ...GatsbyImageSharpFixed
+                        }
+                      }
+                    }
+                  }
+                }
+              }
               texts: Texts {
                 data {
                   sourceName: Source_Name
