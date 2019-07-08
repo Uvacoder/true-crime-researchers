@@ -1,8 +1,32 @@
 import React from "react"
-import { ThemeProvider } from "theme-ui"
+import { Styled } from "theme-ui"
+import { Global, css } from "@emotion/core"
 
-import theme from "theme"
-
-export default props => (
-  <ThemeProvider theme={theme}>{props.children}</ThemeProvider>
+const Layout = ({ children }) => (
+  <>
+    <Styled.root>
+      <Global
+        styles={css`
+          html {
+            box-sizing: border-box;
+          }
+          *,
+          *:before,
+          *:after {
+            box-sizing: inherit;
+          }
+          body {
+            font-family: "canada-type-gibson, sans-serif";
+            margin: 0;
+          }
+          img {
+            max-width: 100%;
+          }
+        `}
+      />
+      {children}
+    </Styled.root>
+  </>
 )
+
+export default Layout

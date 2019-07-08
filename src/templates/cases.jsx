@@ -1,7 +1,7 @@
+import React from "react"
 import { graphql } from "gatsby"
-
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx, Styled } from "theme-ui"
 
 import Audio from "components/audio"
 import Event from "components/event"
@@ -33,30 +33,111 @@ const CasesTemplate = ({ data }) => {
   return (
     <Layout>
       <SEO title="Home" />
-      <main
-        css={{
-          color: "text",
-          fontFamily: "body",
-        }}
-      >
-        <span>{category}</span>
-        <h1>{title}</h1>
-        <span>{status}</span>
-        <p>{summary}</p>
+      <main>
+        <section
+          css={{
+            paddingLeft: ["2rem", "2rem", "3rem"],
+            paddingRight: ["2rem", "2rem", "3rem"],
+          }}
+        >
+          <div
+            css={{
+              textAlign: "center",
+            }}
+          >
+            <span
+              sx={{
+                display: "block",
+                fontSize: [
+                  "calc(2vw + 2vh + 12vmin)",
+                  "calc(2vw + 2vh + 12vmin)",
+                  "calc(2vw + 2vh + 12vmin)",
+                  "calc(2vw + 2vh + 12vmin)",
+                  "16rem",
+                ],
+                fontWeight: "heavy",
+                lineHeight: "0.8",
+                margin: "0",
+                position: "relative",
+                textTransform: "uppercase",
+              }}
+            >
+              {category}
+              <div
+                css={{
+                  alignItems: "center",
+                  bottom: "0",
+                  display: "flex",
+                  justifyContent: "center",
+                  position: "absolute",
+                  left: "0",
+                  right: "0",
+                  top: "0",
+                  zIndex: "1",
+                }}
+              >
+                <span
+                  css={{
+                    backgroundColor: "white",
+                    borderTop: "3px solid #AA2E00",
+                    boxShadow: "0 1px 3px rgba(0, 0, 0, 0.2)",
+                    fontSize: [
+                      "16px",
+                      "16px",
+                      "16px",
+                      "calc(1vw + 1vh + .5vmin)",
+                    ],
+                    fontWeight: "bold",
+                    padding: [
+                      "0.25rem 0.5rem",
+                      "0.25rem 0.5rem",
+                      "0.25rem 0.5rem",
+                      "0.75rem 1rem",
+                    ],
+                  }}
+                >
+                  Status: <span css={{ color: "open" }}>{status}</span>
+                </span>
+              </div>
+            </span>
+          </div>
 
-        {victims && (
-          <section>
-            <h2>Victim</h2>
-            {victims.map(victim => {
-              console.log(victim)
-              return <Victim victim={victim}></Victim>
-            })}
-          </section>
-        )}
+          {victims && (
+            <div
+              css={{
+                display: "flex",
+                flexWrap: "wrap",
+                justifyContent: "center",
+                paddingTop: "2rem",
+              }}
+            >
+              {victims.map(victim => {
+                return <Victim victim={victim}></Victim>
+              })}
+            </div>
+          )}
+
+          <h1
+            css={{
+              fontSize: "calc(2vw + 2vh + 1vmin)",
+            }}
+          >
+            {title}
+          </h1>
+          <p css={{ margin: "0 auto", maxWidth: "900px" }}>{summary}</p>
+        </section>
 
         {suspects && (
-          <section>
-            <h2>Suspect</h2>
+          <section css={{ padding: ["2rem", "2rem", "3rem"] }}>
+            <Styled.h2
+              css={{
+                fontSize: "calc(3vw + 3vh + 2.5vmin)",
+                lineHeight: "1",
+                marginBottom: "1rem",
+              }}
+            >
+              Suspect
+            </Styled.h2>
             {suspects.map(suspect => (
               <Suspect suspect={suspect}></Suspect>
             ))}
@@ -64,8 +145,16 @@ const CasesTemplate = ({ data }) => {
         )}
 
         {events && (
-          <section>
-            <h2>Events</h2>
+          <section css={{ padding: ["2rem", "2rem", "3rem"] }}>
+            <Styled.h2
+              css={{
+                fontSize: "calc(3vw + 3vh + 2.5vmin)",
+                lineHeight: "1",
+                marginBottom: "1rem",
+              }}
+            >
+              Events
+            </Styled.h2>
             <ul>
               <li>
                 {events.map(event => (
@@ -76,11 +165,24 @@ const CasesTemplate = ({ data }) => {
           </section>
         )}
 
-        {places && <Places places={places} />}
+        {places && (
+          <section css={{ padding: ["2rem", "2rem", "3rem"] }}>
+            <h2>Places of Interest</h2>
+            <Places places={places} />
+          </section>
+        )}
 
         {persons && (
-          <section>
-            <h2>Persons of Interest</h2>
+          <section css={{ padding: ["2rem", "2rem", "3rem"] }}>
+            <Styled.h2
+              css={{
+                fontSize: "calc(3vw + 3vh + 2.5vmin)",
+                lineHeight: "1",
+                marginBottom: "1rem",
+              }}
+            >
+              Persons of Interest
+            </Styled.h2>
             {persons.map(person => (
               <Person person={person}></Person>
             ))}
@@ -88,8 +190,16 @@ const CasesTemplate = ({ data }) => {
         )}
 
         {videos && (
-          <section>
-            <h2>Watch</h2>
+          <section css={{ padding: ["2rem", "2rem", "3rem"] }}>
+            <Styled.h2
+              css={{
+                fontSize: "calc(3vw + 3vh + 2.5vmin)",
+                lineHeight: "1",
+                marginBottom: "1rem",
+              }}
+            >
+              Watch
+            </Styled.h2>
             {videos.map(video => (
               <Video video={video}></Video>
             ))}
@@ -97,8 +207,16 @@ const CasesTemplate = ({ data }) => {
         )}
 
         {audio && (
-          <section>
-            <h2>Listen</h2>
+          <section css={{ padding: ["2rem", "2rem", "3rem"] }}>
+            <Styled.h2
+              css={{
+                fontSize: "calc(3vw + 3vh + 2.5vmin)",
+                lineHeight: "1",
+                marginBottom: "1rem",
+              }}
+            >
+              Listen
+            </Styled.h2>
             {audio.map(item => (
               <Audio audio={item}></Audio>
             ))}
@@ -106,8 +224,16 @@ const CasesTemplate = ({ data }) => {
         )}
 
         {texts && (
-          <section>
-            <h2>Read</h2>
+          <section css={{ padding: ["2rem", "2rem", "3rem"] }}>
+            <Styled.h2
+              css={{
+                fontSize: "calc(3vw + 3vh + 2.5vmin)",
+                lineHeight: "1",
+                marginBottom: "1rem",
+              }}
+            >
+              Read
+            </Styled.h2>
             {texts.map(text => (
               <Read text={text} />
             ))}
@@ -228,7 +354,7 @@ export const query = graphql`
                   eyeColor: Eye_Color
                   dateOfBirth: Date_of_Birth
                   nationality: Nationality
-                  lastSeen: Last_Seen
+                  lastSeen: Last_Seen(formatString: "MMMM DD, YYYY")
                   photo: Photo {
                     localFiles {
                       childImageSharp {

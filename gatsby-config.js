@@ -6,9 +6,9 @@ module.exports = {
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
   },
-  __experimentalThemes: ["gatsby-theme-ui"],
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-theme-ui`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -28,6 +28,14 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        typekit: {
+          id: "xkz0rzi",
+        },
       },
     },
     {
@@ -95,14 +103,6 @@ module.exports = {
             tableLinks: ["Cases"],
           },
         ],
-      },
-    },
-    {
-      resolve: "gatsby-plugin-web-font-loader",
-      options: {
-        typekit: {
-          id: "xkz0rzi",
-        },
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

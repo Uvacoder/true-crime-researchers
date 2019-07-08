@@ -10,12 +10,7 @@ const CasesPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Home" />
-      <main
-        css={{
-          color: "text",
-          fontFamily: "body",
-        }}
-      >
+      <main>
         <h1>Cases</h1>
         {data.allAirtable.nodes.map(casefile => {
           const {
