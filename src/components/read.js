@@ -1,4 +1,6 @@
 import React from "react"
+/** @jsx jsx */
+import { jsx, Styled } from "theme-ui"
 
 const Read = ({ text }) => {
   const { sourceName, title, type, url } = text.data
@@ -8,7 +10,7 @@ const Read = ({ text }) => {
         {type}: {sourceName}
       </span>
       <h3>
-        <a href={url}>{title}</a>
+        <Styled.a href={url}>{title}</Styled.a>
       </h3>
     </article>
   )

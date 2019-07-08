@@ -13,11 +13,10 @@ export default {
     action: "#007FAA",
     background: "#fff",
     closed: "#008040",
+    detail: "#dce0e8",
     open: "#AA2E00",
     pending: "#8D6708",
-    primary: "#33e",
     text: "#4f5d78",
-    white: "#fff",
   },
   fonts: {
     body: "canada-type-gibson, sans-serif",
@@ -31,6 +30,7 @@ export default {
   lineHeights: {
     body: 1.5,
     heading: 1.125,
+    single: 1,
   },
   space: [
     0,
@@ -166,6 +166,11 @@ export default {
     },
     a: {
       color: "action",
+      fontWeight: "bold",
+    },
+    table: {
+      borderCollapse: "separate",
+      borderSpacing: 0,
     },
   },
 }

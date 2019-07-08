@@ -22,21 +22,17 @@ const CasesPage = ({ data }) => {
             status,
           } = casefile.data
 
-          if (published === "true") {
-            return (
-              <article key={title}>
-                <h2>
-                  {category}: {title}
-                </h2>
-                <p>
-                  {status} {summary}
-                </p>
-                <Link to={`cases/${slug}`}>View the Case</Link>
-              </article>
-            )
-          } else {
-            return <p>Fuck</p>
-          }
+          return (
+            <article key={title}>
+              <h2>
+                {category}: {title}
+              </h2>
+              <p>
+                {status} {summary}
+              </p>
+              <Link to={`cases/${slug}`}>View the Case</Link>
+            </article>
+          )
         })}
       </main>
     </Layout>
@@ -45,7 +41,9 @@ const CasesPage = ({ data }) => {
 
 export const query = graphql`
   {
-    allAirtable(filter: { table: { eq: "Cases" } }) {
+    allAirtable(
+      filter: { table: { eq: "Cases" }, data: { Published: { eq: "true" } } }
+    ) {
       nodes {
         data {
           title: Title

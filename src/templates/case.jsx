@@ -35,13 +35,12 @@ const CasesTemplate = ({ data }) => {
       <SEO title="Home" />
       <main>
         <section
-          css={{
-            paddingLeft: ["2rem", "2rem", "3rem"],
-            paddingRight: ["2rem", "2rem", "3rem"],
+          sx={{
+            px: [16, 16, 24],
           }}
         >
           <div
-            css={{
+            sx={{
               textAlign: "center",
             }}
           >
@@ -64,7 +63,7 @@ const CasesTemplate = ({ data }) => {
             >
               {category}
               <div
-                css={{
+                sx={{
                   alignItems: "center",
                   bottom: "0",
                   display: "flex",
@@ -77,8 +76,8 @@ const CasesTemplate = ({ data }) => {
                 }}
               >
                 <span
-                  css={{
-                    backgroundColor: "white",
+                  sx={{
+                    bg: "white",
                     borderTop: "3px solid #AA2E00",
                     boxShadow: "0 1px 3px rgba(0, 0, 0, 0.2)",
                     fontSize: [
@@ -88,15 +87,11 @@ const CasesTemplate = ({ data }) => {
                       "calc(1vw + 1vh + .5vmin)",
                     ],
                     fontWeight: "bold",
-                    padding: [
-                      "0.25rem 0.5rem",
-                      "0.25rem 0.5rem",
-                      "0.25rem 0.5rem",
-                      "0.75rem 1rem",
-                    ],
+                    px: [2, 2, 2, 6],
+                    py: [4, 4, 4, 8],
                   }}
                 >
-                  Status: <span css={{ color: "open" }}>{status}</span>
+                  Status: <span sx={{ color: "open" }}>{status}</span>
                 </span>
               </div>
             </span>
@@ -104,11 +99,11 @@ const CasesTemplate = ({ data }) => {
 
           {victims && (
             <div
-              css={{
+              sx={{
                 display: "flex",
                 flexWrap: "wrap",
                 justifyContent: "center",
-                paddingTop: "2rem",
+                pt: "16",
               }}
             >
               {victims.map(victim => {
@@ -118,22 +113,22 @@ const CasesTemplate = ({ data }) => {
           )}
 
           <h1
-            css={{
+            sx={{
               fontSize: "calc(2vw + 2vh + 1vmin)",
             }}
           >
             {title}
           </h1>
-          <p css={{ margin: "0 auto", maxWidth: "900px" }}>{summary}</p>
+          <p sx={{ mx: "auto", my: "0", maxWidth: "900px" }}>{summary}</p>
         </section>
 
         {suspects && (
-          <section css={{ padding: ["2rem", "2rem", "3rem"] }}>
+          <section sx={{ p: [16, 16, 24] }}>
             <Styled.h2
-              css={{
+              sx={{
                 fontSize: "calc(3vw + 3vh + 2.5vmin)",
-                lineHeight: "1",
-                marginBottom: "1rem",
+                lineHeight: "single",
+                mb: 8,
               }}
             >
               Suspect
@@ -145,12 +140,12 @@ const CasesTemplate = ({ data }) => {
         )}
 
         {events && (
-          <section css={{ padding: ["2rem", "2rem", "3rem"] }}>
+          <section sx={{ padding: [16, 16, 24] }}>
             <Styled.h2
-              css={{
+              sx={{
                 fontSize: "calc(3vw + 3vh + 2.5vmin)",
-                lineHeight: "1",
-                marginBottom: "1rem",
+                lineHeight: "single",
+                mb: 8,
               }}
             >
               Events
@@ -166,19 +161,19 @@ const CasesTemplate = ({ data }) => {
         )}
 
         {places && (
-          <section css={{ padding: ["2rem", "2rem", "3rem"] }}>
+          <section sx={{ p: [16, 16, 24] }}>
             <h2>Places of Interest</h2>
             <Places places={places} />
           </section>
         )}
 
         {persons && (
-          <section css={{ padding: ["2rem", "2rem", "3rem"] }}>
+          <section sx={{ p: [16, 16, 24] }}>
             <Styled.h2
-              css={{
+              sx={{
                 fontSize: "calc(3vw + 3vh + 2.5vmin)",
-                lineHeight: "1",
-                marginBottom: "1rem",
+                lineHeight: "single",
+                mb: 8,
               }}
             >
               Persons of Interest
@@ -190,12 +185,12 @@ const CasesTemplate = ({ data }) => {
         )}
 
         {videos && (
-          <section css={{ padding: ["2rem", "2rem", "3rem"] }}>
+          <section sx={{ p: [16, 16, 24] }}>
             <Styled.h2
-              css={{
+              sx={{
                 fontSize: "calc(3vw + 3vh + 2.5vmin)",
-                lineHeight: "1",
-                marginBottom: "1rem",
+                lineHeight: "single",
+                mb: 8,
               }}
             >
               Watch
@@ -207,12 +202,12 @@ const CasesTemplate = ({ data }) => {
         )}
 
         {audio && (
-          <section css={{ padding: ["2rem", "2rem", "3rem"] }}>
+          <section sx={{ p: [16, 16, 24] }}>
             <Styled.h2
-              css={{
+              sx={{
                 fontSize: "calc(3vw + 3vh + 2.5vmin)",
-                lineHeight: "1",
-                marginBottom: "1rem",
+                lineHeight: "single",
+                mb: 8,
               }}
             >
               Listen
@@ -224,12 +219,12 @@ const CasesTemplate = ({ data }) => {
         )}
 
         {texts && (
-          <section css={{ padding: ["2rem", "2rem", "3rem"] }}>
+          <section sx={{ p: [16, 16, 24] }}>
             <Styled.h2
-              css={{
+              sx={{
                 fontSize: "calc(3vw + 3vh + 2.5vmin)",
-                lineHeight: "1",
-                marginBottom: "1rem",
+                lineHeight: "single",
+                mb: 8,
               }}
             >
               Read

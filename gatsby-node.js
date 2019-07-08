@@ -31,7 +31,7 @@ exports.createPages = ({ graphql, actions }) => {
       createPage({
         path: `cases/${node.data.slug}`,
         component: isPage
-          ? path.resolve(`./src/templates/cases.jsx`)
+          ? path.resolve(`./src/templates/case.jsx`)
           : path.resolve(`./src/templates/pending.jsx`),
         context: {
           slug: node.data.slug,
