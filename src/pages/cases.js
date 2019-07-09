@@ -1,5 +1,4 @@
-import { graphql } from "gatsby"
-import Img from "gatsby-image"
+import { Link, graphql } from "gatsby"
 
 /** @jsx jsx */
 import { jsx } from "theme-ui"
@@ -11,15 +10,17 @@ const CasesPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Home" />
-      <main
-        css={{
-          color: "text",
-          fontFamily: "body",
-        }}
-      >
+      <main>
         <h1>Cases</h1>
         {data.allAirtable.nodes.map(casefile => {
-          const { category, summary, title, status } = casefile.data
+          const {
+            category,
+            slug,
+            summary,
+            title,
+            published,
+            status,
+          } = casefile.data
 
           return (
             <article key={title}>
@@ -29,6 +30,7 @@ const CasesPage = ({ data }) => {
               <p>
                 {status} {summary}
               </p>
+              <Link to={`cases/${slug}`}>View the Case</Link>
             </article>
           )
         })}
@@ -39,12 +41,16 @@ const CasesPage = ({ data }) => {
 
 export const query = graphql`
   {
-    allAirtable(filter: { table: { eq: "Cases" } }) {
+    allAirtable(
+      filter: { table: { eq: "Cases" }, data: { Published: { eq: "true" } } }
+    ) {
       nodes {
         data {
           title: Title
           summary: Summary
           category: Category
+          published: Published
+          slug: Slug
           status: Status
           Victims {
             data {

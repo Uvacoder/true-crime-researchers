@@ -6,9 +6,9 @@ module.exports = {
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
   },
-  __experimentalThemes: ["gatsby-theme-ui"],
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-theme-ui`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -31,6 +31,14 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        typekit: {
+          id: "xkz0rzi",
+        },
+      },
+    },
+    {
       resolve: `gatsby-source-airtable`,
       options: {
         //not prefaced with "GATSBY_", will not automatically be included client-side unless you explicitly expose it
@@ -38,8 +46,50 @@ module.exports = {
         tables: [
           {
             baseId: `appcAT8442e7faJRH`,
+            tableName: `Audio`,
+            mapping: { Thumbnail: `fileNode` },
+            tableLinks: ["Cases"],
+          },
+          {
+            baseId: `appcAT8442e7faJRH`,
             tableName: `Cases`,
-            tableLinks: ["Victims"],
+            tableLinks: [
+              "Audio",
+              "Events",
+              "Persons_of_Interest",
+              "Places",
+              "Suspects",
+              "Texts",
+              "Victims",
+              "Videos",
+            ],
+          },
+          {
+            baseId: `appcAT8442e7faJRH`,
+            tableName: `Events`,
+            tableLinks: ["Cases"],
+          },
+          {
+            baseId: `appcAT8442e7faJRH`,
+            tableName: `Persons_of_Interest`,
+            tableLinks: ["Cases"],
+            mapping: { Person_Photo: `fileNode` },
+          },
+          {
+            baseId: `appcAT8442e7faJRH`,
+            tableName: `Places`,
+            tableLinks: ["Cases"],
+          },
+          {
+            baseId: `appcAT8442e7faJRH`,
+            tableName: `Suspects`,
+            tableLinks: ["Cases"],
+            mapping: { Suspect_Photo: `fileNode` },
+          },
+          {
+            baseId: `appcAT8442e7faJRH`,
+            tableName: `Texts`,
+            tableLinks: ["Cases"],
           },
           {
             baseId: `appcAT8442e7faJRH`,
@@ -47,15 +97,12 @@ module.exports = {
             mapping: { Photo: `fileNode` },
             tableLinks: ["Cases"],
           },
+          {
+            baseId: `appcAT8442e7faJRH`,
+            tableName: `Videos`,
+            tableLinks: ["Cases"],
+          },
         ],
-      },
-    },
-    {
-      resolve: "gatsby-plugin-web-font-loader",
-      options: {
-        typekit: {
-          id: "xkz0rzi",
-        },
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

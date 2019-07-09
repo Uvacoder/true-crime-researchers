@@ -13,11 +13,12 @@ exports.createPages = ({ graphql, actions }) => {
   return new Promise(async resolve => {
     const result = await graphql(`
       {
-        allAirtable {
+        allAirtable(filter: { data: {}, table: { eq: "Cases" } }) {
           edges {
             node {
               table
               data {
+                published: Published
                 slug: Slug
               }
             }
@@ -26,12 +27,15 @@ exports.createPages = ({ graphql, actions }) => {
       }
     `)
     result.data.allAirtable.edges.forEach(({ node }) => {
-      const isPage = node.table === "Cases"
+      const isPage = node.table === "Cases" && node.data.published === "true"
       createPage({
         path: `cases/${node.data.slug}`,
         component: isPage
-          ? path.resolve(`./src/templates/victims.jsx`)
-          : path.resolve(`./src/templates/cases.jsx`),
+          ? path.resolve(`./src/templates/case.jsx`)
+          : path.resolve(`./src/templates/pending.jsx`),
+        context: {
+          slug: node.data.slug,
+        },
       })
     })
     resolve()
