@@ -1,4 +1,4 @@
-## Hosted with best hosting
+## Hosted with the best hosting
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/4deba89e-c814-4a58-8783-2eff3fda1d15/deploy-status)](https://app.netlify.com/sites/nostalgic-cray-3d0a8a/deploys)
 
