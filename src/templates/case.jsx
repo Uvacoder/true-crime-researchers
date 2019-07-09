@@ -11,6 +11,7 @@ import Person from "components/person"
 import Places from "components/places"
 import Suspect from "components/suspect"
 import SEO from "components/seo"
+import Timeline from "components/timeline"
 import Victim from "components/victim"
 import Video from "components/video"
 
@@ -145,18 +146,17 @@ const CasesTemplate = ({ data }) => {
               sx={{
                 fontSize: "calc(3vw + 3vh + 2.5vmin)",
                 lineHeight: "single",
-                mb: 8,
+                mb: [8, 8, 8, 8, 24],
+                textAlign: ["left", "left", "left", "left", "center"],
               }}
             >
               Events
             </Styled.h2>
-            <ul>
-              <li>
-                {events.map(event => (
-                  <Event event={event} />
-                ))}
-              </li>
-            </ul>
+            <Timeline>
+              {events.map(event => (
+                <Event event={event} />
+              ))}
+            </Timeline>
           </section>
         )}
 
