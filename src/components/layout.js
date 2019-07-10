@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import { Styled } from "theme-ui"
 import { Global, css } from "@emotion/core"
 
@@ -24,6 +25,12 @@ const Layout = ({ children }) => (
           }
         `}
       />
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/cases" style={{ marginLeft: "20px" }}>
+          Cases
+        </Link>
+      </nav>
       {children}
     </Styled.root>
   </>

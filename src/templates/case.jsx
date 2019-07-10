@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
+import { Flex, jsx, Styled } from "theme-ui"
 
 import Audio from "components/audio"
 import Event from "components/event"
@@ -174,13 +174,21 @@ const CasesTemplate = ({ data }) => {
                 fontSize: "calc(3vw + 3vh + 2.5vmin)",
                 lineHeight: "single",
                 mb: 8,
+                mt: 0,
+                textAlign: ["left", null, null, null, "center"],
               }}
             >
               Persons of Interest
             </Styled.h2>
-            {persons.map(person => (
-              <Person person={person}></Person>
-            ))}
+            <Flex
+              sx={{
+                flexWrap: "wrap",
+              }}
+            >
+              {persons.map(person => (
+                <Person person={person}></Person>
+              ))}
+            </Flex>
           </section>
         )}
 
@@ -294,7 +302,6 @@ export const query = graphql`
                       }
                     }
                   }
-                  sex: Sex
                 }
               }
               places: Places {
