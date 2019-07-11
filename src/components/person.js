@@ -6,11 +6,18 @@ import { Box, jsx, Styled } from "theme-ui"
 const Person = ({ person }) => {
   const { description, name, personPhoto } = person.data
   return (
-    <Box as="article" sx={{ p: 16, width: ["100%", null, null, null, "50%"] }}>
+    <Box
+      as="article"
+      sx={{
+        py: 16,
+        px: [null, null, 16],
+        width: ["100%", null, null, null, "50%"],
+      }}
+    >
       <div
         sx={{
           bg: "background",
-          boxShadow: "0 1px 3px rgba(0,0,0,0.2)",
+          boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
           borderTop: theme => `3px solid ${theme.colors.open}`,
           mt: 24,
           p: [8, null, 16],
@@ -20,13 +27,13 @@ const Person = ({ person }) => {
         <figure
           sx={{
             bg: "background",
-            boxShadow: "0 1px 3px rgba(0,0,0,0.2)",
+            boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
             display: "inline-block",
             textAlign: "center",
             m: 0,
             mt: -48,
-            p: 8,
-            pb: 4,
+            p: 4,
+            pb: 0,
           }}
         >
           <Img
