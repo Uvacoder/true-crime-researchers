@@ -6,11 +6,11 @@ import { Flex, jsx, Styled } from "theme-ui"
 import Audio from "components/audio"
 import Event from "components/event"
 import Layout from "components/layout"
-import Read from "components/read"
 import Person from "components/person"
 import Places from "components/places"
 import Suspect from "components/suspect"
 import SEO from "components/seo"
+import Texts from "components/texts"
 import Timeline from "components/timeline"
 import Victim from "components/victim"
 import Video from "components/video"
@@ -235,29 +235,7 @@ const CasesTemplate = ({ data }) => {
           </section>
         )}
 
-        {texts && (
-          <section sx={{ p: [16, 16, 24], textAlign: "center" }}>
-            <Styled.h2
-              sx={{
-                fontSize: "calc(3vw + 3vh + 2.5vmin)",
-                lineHeight: "single",
-                mb: 8,
-              }}
-            >
-              Read
-            </Styled.h2>
-
-            <div
-              sx={{
-                display: "inline-block",
-              }}
-            >
-              {texts.map(text => (
-                <Read text={text} />
-              ))}
-            </div>
-          </section>
-        )}
+        {texts && <Texts texts={texts} />}
       </main>
     </Layout>
   )

@@ -7,7 +7,7 @@ import IconBook from "images/icons/book.svg"
 import IconForum from "images/icons/forum.svg"
 import IconWebsite from "images/icons/website.svg"
 
-const Read = ({ text }) => {
+const Text = ({ text }) => {
   const { sourceName, title, type, url } = text.data
 
   const iconMap = type => {
@@ -60,4 +60,4 @@ const Read = ({ text }) => {
   )
 }
 
-export default Read
+export default Text
