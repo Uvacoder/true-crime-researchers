@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 /** @jsx jsx */
 import { Flex, jsx, Styled } from "theme-ui"
 
-import Audio from "components/audio"
+import Audios from "components/audios"
 import Event from "components/event"
 import Layout from "components/layout"
 import Person from "components/person"
@@ -209,31 +209,7 @@ const CasesTemplate = ({ data }) => {
           </section>
         )}
 
-        {audio && (
-          <section sx={{ px: 8, py: [16, 16, 24] }}>
-            <Styled.h2
-              sx={{
-                fontSize: "calc(3vw + 3vh + 2.5vmin)",
-                lineHeight: "single",
-                mb: 8,
-                textAlign: "center",
-              }}
-            >
-              Listen
-            </Styled.h2>
-            <Flex
-              as="article"
-              sx={{
-                flexWrap: "wrap",
-                justifyContent: "center",
-              }}
-            >
-              {audio.map(item => (
-                <Audio audio={item}></Audio>
-              ))}
-            </Flex>
-          </section>
-        )}
+        {audio && <Audios audios={audio} />}
 
         {texts && <Texts texts={texts} />}
       </main>
