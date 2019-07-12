@@ -51,7 +51,7 @@ const Audio = ({ audio }) => {
         />
         <div
           sx={{
-            mt: 8,
+            mt: [8, null, 0],
             pl: [null, null, 12],
             textAlign: "left",
           }}

@@ -236,7 +236,7 @@ const CasesTemplate = ({ data }) => {
         )}
 
         {texts && (
-          <section sx={{ p: [16, 16, 24] }}>
+          <section sx={{ p: [16, 16, 24], textAlign: "center" }}>
             <Styled.h2
               sx={{
                 fontSize: "calc(3vw + 3vh + 2.5vmin)",
@@ -246,9 +246,16 @@ const CasesTemplate = ({ data }) => {
             >
               Read
             </Styled.h2>
-            {texts.map(text => (
-              <Read text={text} />
-            ))}
+
+            <div
+              sx={{
+                display: "inline-block",
+              }}
+            >
+              {texts.map(text => (
+                <Read text={text} />
+              ))}
+            </div>
           </section>
         )}
       </main>

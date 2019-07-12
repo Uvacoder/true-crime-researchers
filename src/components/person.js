@@ -9,6 +9,7 @@ const Person = ({ person }) => {
     <Box
       as="article"
       sx={{
+        display: "flex",
         py: 16,
         px: [null, null, 16],
         width: ["100%", null, null, null, "50%"],

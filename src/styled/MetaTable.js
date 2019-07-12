@@ -6,6 +6,7 @@ export const MetaTable = styled.table`
   }
 
   td:first-of-type {
+    color: ${props => props.theme.colors.mute};
     font-size: 80%;
     text-transform: uppercase;
   }
