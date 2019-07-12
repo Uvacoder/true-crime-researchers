@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { Flex, jsx, Styled } from "theme-ui"
 
-import Audio from "components/Audio"
+import Audio from "components/audio"
 
 const Audios = ({ audios }) => {
   return (
