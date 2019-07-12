@@ -34,7 +34,96 @@ const CasesTemplate = ({ data }) => {
   return (
     <Layout>
       <SEO title="Home" />
-      <main>TEst</main>
+      <main>
+        <section
+          sx={{
+            px: [16, 16, 24],
+          }}
+        >
+          <div
+            sx={{
+              textAlign: "center",
+            }}
+          >
+            <span
+              sx={{
+                display: "block",
+                fontSize: [
+                  "calc(2vw + 2vh + 12vmin)",
+                  "calc(2vw + 2vh + 12vmin)",
+                  "calc(2vw + 2vh + 12vmin)",
+                  "calc(2vw + 2vh + 12vmin)",
+                  "16rem",
+                ],
+                fontWeight: "heavy",
+                lineHeight: "0.8",
+                margin: "0",
+                position: "relative",
+                textTransform: "uppercase",
+              }}
+            >
+              {category}
+              <div
+                sx={{
+                  alignItems: "center",
+                  bottom: "0",
+                  display: "flex",
+                  justifyContent: "center",
+                  position: "absolute",
+                  left: "0",
+                  right: "0",
+                  top: "0",
+                  zIndex: "1",
+                }}
+              >
+                <span
+                  sx={{
+                    bg: "white",
+                    borderTop: "3px solid #AA2E00",
+                    boxShadow: "0 1px 3px rgba(0, 0, 0, 0.2)",
+                    fontSize: [
+                      "16px",
+                      "16px",
+                      "16px",
+                      "calc(1vw + 1vh + .5vmin)",
+                    ],
+                    fontWeight: "bold",
+                    px: [2, 2, 2, 6],
+                    py: [4, 4, 4, 8],
+                  }}
+                >
+                  Status: <span sx={{ color: "open" }}>{status}</span>
+                </span>
+              </div>
+            </span>
+          </div>
+
+          {victims && <Victims victims={victims} />}
+
+          <h1
+            sx={{
+              fontSize: "calc(2vw + 2vh + 1vmin)",
+            }}
+          >
+            {title}
+          </h1>
+          <p sx={{ mx: "auto", my: "0", maxWidth: "900px" }}>{summary}</p>
+        </section>
+
+        {suspects && <Suspects suspects={suspects} />}
+
+        {events && <Events events={events} />}
+
+        {places && <Places places={places} />}
+
+        {persons && <Persons persons={persons} />}
+
+        {videos && <Videos videos={videos} />}
+
+        {audio && <Audios audios={audio} />}
+
+        {texts && <Texts texts={texts} />}
+      </main>
     </Layout>
   )
 }
