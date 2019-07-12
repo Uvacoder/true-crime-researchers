@@ -1,4 +1,3 @@
-import React from "react"
 import Img from "gatsby-image"
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui"
@@ -6,7 +5,6 @@ import { jsx, Styled } from "theme-ui"
 import StackAndSplit from "components/stack-and-split"
 
 import { MetaTable } from "styled/MetaTable"
-import { Z_BLOCK } from "zlib"
 
 const Victim = ({ victim }) => {
   const {

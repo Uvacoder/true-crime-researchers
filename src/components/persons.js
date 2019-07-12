@@ -1,4 +1,3 @@
-import React from "react"
 /** @jsx jsx */
 import { Flex, jsx, Styled } from "theme-ui"
 

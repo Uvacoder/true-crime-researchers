@@ -1,4 +1,3 @@
-import React from "react"
 import Img from "gatsby-image"
 /** @jsx jsx */
 import { Box, jsx, Styled } from "theme-ui"

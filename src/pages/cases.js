@@ -13,14 +13,7 @@ const CasesPage = ({ data }) => {
       <main>
         <h1>Cases</h1>
         {data.allAirtable.nodes.map(casefile => {
-          const {
-            category,
-            slug,
-            summary,
-            title,
-            published,
-            status,
-          } = casefile.data
+          const { category, slug, summary, title, status } = casefile.data
 
           return (
             <article key={title}>

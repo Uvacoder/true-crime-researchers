@@ -1,9 +1,8 @@
-import React from "react"
 /** @jsx jsx */
 import { Flex, Box, jsx, Styled } from "theme-ui"
 
 const Video = ({ video }) => {
-  const { description, source, title, url } = video.data
+  const { description, title, url } = video.data
   return (
     <Flex
       as="article"

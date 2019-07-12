@@ -1,7 +1,6 @@
-import React from "react"
 import { graphql } from "gatsby"
 /** @jsx jsx */
-import { Flex, jsx, Styled } from "theme-ui"
+import { jsx } from "theme-ui"
 
 import Audios from "components/audios"
 import Events from "components/events"
@@ -11,7 +10,6 @@ import Places from "components/places"
 import Suspects from "components/suspects"
 import SEO from "components/seo"
 import Texts from "components/texts"
-import Timeline from "components/timeline"
 import Victims from "components/victims"
 import Videos from "components/videos"
 
