@@ -13,7 +13,7 @@ import SEO from "components/seo"
 import Texts from "components/texts"
 import Timeline from "components/timeline"
 import Victim from "components/victim"
-import Video from "components/video"
+import Videos from "components/videos"
 
 const CasesTemplate = ({ data }) => {
   const {
@@ -192,22 +192,7 @@ const CasesTemplate = ({ data }) => {
           </section>
         )}
 
-        {videos && (
-          <section sx={{ p: [16, 16, 24] }}>
-            <Styled.h2
-              sx={{
-                fontSize: "calc(3vw + 3vh + 2.5vmin)",
-                lineHeight: "single",
-                mb: 8,
-              }}
-            >
-              Watch
-            </Styled.h2>
-            {videos.map(video => (
-              <Video video={video}></Video>
-            ))}
-          </section>
-        )}
+        {videos && <Videos videos={videos} />}
 
         {audio && <Audios audios={audio} />}
 
