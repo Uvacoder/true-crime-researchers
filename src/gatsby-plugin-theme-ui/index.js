@@ -14,6 +14,7 @@ export default {
     background: "#fff",
     closed: "#008040",
     detail: "#dce0e8",
+    mute: "#808fac",
     open: "#AA2E00",
     pending: "#8D6708",
     text: "#4f5d78",
