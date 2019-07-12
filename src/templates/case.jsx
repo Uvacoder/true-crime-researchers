@@ -4,15 +4,15 @@ import { graphql } from "gatsby"
 import { Flex, jsx, Styled } from "theme-ui"
 
 import Audios from "components/audios"
-import Event from "components/event"
+import Events from "components/events"
 import Layout from "components/layout"
-import Person from "components/person"
+import Persons from "components/persons"
 import Places from "components/places"
-import Suspect from "components/suspect"
+import Suspects from "components/suspects"
 import SEO from "components/seo"
 import Texts from "components/texts"
 import Timeline from "components/timeline"
-import Victim from "components/victim"
+import Victims from "components/victims"
 import Videos from "components/videos"
 
 const CasesTemplate = ({ data }) => {
@@ -98,20 +98,7 @@ const CasesTemplate = ({ data }) => {
             </span>
           </div>
 
-          {victims && (
-            <div
-              sx={{
-                display: "flex",
-                flexWrap: "wrap",
-                justifyContent: "center",
-                pt: "16",
-              }}
-            >
-              {victims.map(victim => {
-                return <Victim victim={victim}></Victim>
-              })}
-            </div>
-          )}
+          {victims && <Victims victims={victims} />}
 
           <h1
             sx={{
@@ -123,74 +110,13 @@ const CasesTemplate = ({ data }) => {
           <p sx={{ mx: "auto", my: "0", maxWidth: "900px" }}>{summary}</p>
         </section>
 
-        {suspects && (
-          <section sx={{ p: [16, 16, 24] }}>
-            <Styled.h2
-              sx={{
-                fontSize: "calc(3vw + 3vh + 2.5vmin)",
-                lineHeight: "single",
-                mb: 8,
-              }}
-            >
-              Suspect
-            </Styled.h2>
-            {suspects.map(suspect => (
-              <Suspect suspect={suspect}></Suspect>
-            ))}
-          </section>
-        )}
+        {suspects && <Suspects suspects={suspects} />}
 
-        {events && (
-          <section sx={{ padding: [16, 16, 24] }}>
-            <Styled.h2
-              sx={{
-                fontSize: "calc(3vw + 3vh + 2.5vmin)",
-                lineHeight: "single",
-                mb: [8, 8, 8, 8, 24],
-                textAlign: ["left", "left", "left", "left", "center"],
-              }}
-            >
-              Events
-            </Styled.h2>
-            <Timeline>
-              {events.map(event => (
-                <Event event={event} />
-              ))}
-            </Timeline>
-          </section>
-        )}
+        {events && <Events events={events} />}
 
-        {places && (
-          <section sx={{ p: [16, 16, 24] }}>
-            <h2>Places of Interest</h2>
-            <Places places={places} />
-          </section>
-        )}
+        {places && <Places places={places} />}
 
-        {persons && (
-          <section sx={{ p: [16, 16, 24] }}>
-            <Styled.h2
-              sx={{
-                fontSize: "calc(3vw + 3vh + 2.5vmin)",
-                lineHeight: "single",
-                mb: 16,
-                mt: 0,
-                textAlign: ["left", null, null, null, "center"],
-              }}
-            >
-              Persons of Interest
-            </Styled.h2>
-            <Flex
-              sx={{
-                flexWrap: "wrap",
-              }}
-            >
-              {persons.map(person => (
-                <Person person={person}></Person>
-              ))}
-            </Flex>
-          </section>
-        )}
+        {persons && <Persons persons={persons} />}
 
         {videos && <Videos videos={videos} />}
 
