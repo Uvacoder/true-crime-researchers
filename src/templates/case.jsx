@@ -173,7 +173,7 @@ const CasesTemplate = ({ data }) => {
               sx={{
                 fontSize: "calc(3vw + 3vh + 2.5vmin)",
                 lineHeight: "single",
-                mb: 8,
+                mb: 16,
                 mt: 0,
                 textAlign: ["left", null, null, null, "center"],
               }}
@@ -210,19 +210,28 @@ const CasesTemplate = ({ data }) => {
         )}
 
         {audio && (
-          <section sx={{ p: [16, 16, 24] }}>
+          <section sx={{ px: 8, py: [16, 16, 24] }}>
             <Styled.h2
               sx={{
                 fontSize: "calc(3vw + 3vh + 2.5vmin)",
                 lineHeight: "single",
                 mb: 8,
+                textAlign: "center",
               }}
             >
               Listen
             </Styled.h2>
-            {audio.map(item => (
-              <Audio audio={item}></Audio>
-            ))}
+            <Flex
+              as="article"
+              sx={{
+                flexWrap: "wrap",
+                justifyContent: "center",
+              }}
+            >
+              {audio.map(item => (
+                <Audio audio={item}></Audio>
+              ))}
+            </Flex>
           </section>
         )}
 
@@ -268,7 +277,7 @@ export const query = graphql`
                   thumbnail: Thumbnail {
                     localFiles {
                       childImageSharp {
-                        fixed(width: 150) {
+                        fixed(width: 200) {
                           ...GatsbyImageSharpFixed
                         }
                       }

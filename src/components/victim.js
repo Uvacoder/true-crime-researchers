@@ -33,7 +33,7 @@ const Victim = ({ victim }) => {
           <figure
             sx={{
               bg: "white",
-              boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
+              boxShadow: "0 1px 2px rgba(0, 0, 0, 0.1)",
               my: 0,
               ml: 0,
               mr: -8,
@@ -72,7 +72,7 @@ const Victim = ({ victim }) => {
           sx={{
             bg: "white",
             borderTop: theme => `3px solid ${theme.colors.open}`,
-            boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
+            boxShadow: "0 1px 2px rgba(0, 0, 0, 0.1)",
             display: "inline-block",
             px: 20,
             py: 12,

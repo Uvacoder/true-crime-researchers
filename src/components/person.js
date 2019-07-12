@@ -17,7 +17,7 @@ const Person = ({ person }) => {
       <div
         sx={{
           bg: "background",
-          boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
+          boxShadow: "0 1px 2px rgba(0,0,0,0.1)",
           borderTop: theme => `3px solid ${theme.colors.open}`,
           mt: 24,
           p: [8, null, 16],
@@ -27,7 +27,7 @@ const Person = ({ person }) => {
         <figure
           sx={{
             bg: "background",
-            boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
+            boxShadow: "0 1px 2px rgba(0,0,0,0.1)",
             display: "inline-block",
             textAlign: "center",
             m: 0,
