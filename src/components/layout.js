@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import { Styled } from "theme-ui"
 import { Global, css } from "@emotion/core"
 
-import TextureImage from "images/clean_textile_@2x.jpg"
+import TextureImage from "images/texture.jpg"
 
 const Layout = ({ children }) => (
   <>
