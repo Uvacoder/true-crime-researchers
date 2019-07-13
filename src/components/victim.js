@@ -1,8 +1,6 @@
 import Img from "gatsby-image"
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
-
-import StackAndSplit from "components/stack-and-split"
+import { Box, Flex, jsx, Styled } from "theme-ui"
 
 import { MetaTable } from "styled/MetaTable"
 
@@ -25,30 +23,34 @@ const Victim = ({ victim }) => {
   } = victim.data
 
   return (
-    <StackAndSplit>
-      <div>
-        {photo != null && (
-          <figure
-            sx={{
-              bg: "background",
-              boxShadow: "0 1px 2px rgba(0, 0, 0, 0.1)",
-              m: 0,
-              pb: 2,
-              pl: 6,
-              pr: 6,
-              pt: 6,
-              position: "relative",
-              zIndex: "1",
-            }}
-          >
-            <Img
-              alt="Photo of {firstName} {lastName}"
-              fixed={photo.localFiles[0].childImageSharp.fixed}
-            />
-          </figure>
-        )}
-      </div>
-      <div
+    <Flex
+      as="article"
+      sx={{
+        alignItems: "flex-start",
+        justifyContent: "center",
+        flexWrap: "wrap",
+      }}
+    >
+      {photo != null && (
+        <figure
+          sx={{
+            bg: "background",
+            boxShadow: "0 1px 2px rgba(0, 0, 0, 0.1)",
+            m: 0,
+            pb: 2,
+            pl: 6,
+            pr: 6,
+            pt: 6,
+          }}
+        >
+          <Img
+            alt="Photo of {firstName} {lastName}"
+            fixed={photo.localFiles[0].childImageSharp.fixed}
+          />
+        </figure>
+      )}
+
+      <Box
         sx={{
           ml: 16,
         }}
@@ -128,8 +130,8 @@ const Victim = ({ victim }) => {
             )}
           </tbody>
         </MetaTable>
-      </div>
-    </StackAndSplit>
+      </Box>
+    </Flex>
   )
 }
 
