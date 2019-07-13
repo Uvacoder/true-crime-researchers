@@ -10,11 +10,11 @@ export default {
     "1880px",
   ],
   colors: {
-    action: "#007FAA",
+    action: "#b94d5d",
     background: "#fff",
     closed: "#008040",
     detail: "#dce0e8",
-    mute: "#808fac",
+    mute: "#6b7c9f",
     open: "#AA2E00",
     pending: "#8D6708",
     text: "#4f5d78",

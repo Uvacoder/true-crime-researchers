@@ -27,6 +27,7 @@ export const List = styled.ol`
   }
 
   .title {
+    color: ${props => props.theme.colors.heading}
     font-weight: 600;
     margin-bottom: 8px;
   }
@@ -118,11 +119,7 @@ export const List = styled.ol`
     .marker {
       &:before {
         background: transparent;
-        border-color: pink;
       }
-    }
-    .item:hover .marker:before {
-      background: pink;
     }
   }
 

@@ -30,13 +30,8 @@ const Audio = ({ audio }) => {
       <div
         sx={{
           alignItems: "center",
-          bg: "background",
-          borderLeft: [0, null, theme => `3px solid ${theme.colors.open}`],
-          borderTop: [theme => `3px solid ${theme.colors.open}`, null, 0],
-          boxShadow: "0 1px 2px rgba(0, 0, 0, 0.1)",
           display: "flex",
           flexDirection: ["column", null, "row"],
-          p: 12,
           textAlign: "center",
           width: "100%",
         }}
