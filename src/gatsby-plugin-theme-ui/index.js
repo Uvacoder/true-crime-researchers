@@ -15,9 +15,11 @@ export default {
     closed: "#008040",
     detail: "#dce0e8",
     mute: "#6b7c9f",
-    open: "#AA2E00",
-    pending: "#8D6708",
+    open: "#bb573b",
+    pending: "#b77706",
+    suspect: "#c70039",
     text: "#4f5d78",
+    textInvert: "#ffffff",
   },
   fonts: {
     body: "canada-type-gibson, sans-serif",
