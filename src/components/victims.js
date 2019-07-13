@@ -14,7 +14,13 @@ const Victims = ({ victims }) => {
       }}
     >
       {victims.map(victim => {
-        return <Victim victim={victim}></Victim>
+        const { firstName, middleName, lastName } = victim
+        return (
+          <Victim
+            key={`${firstName}-${middleName}-${lastName}`}
+            victim={victim}
+          ></Victim>
+        )
       })}
     </article>
   )

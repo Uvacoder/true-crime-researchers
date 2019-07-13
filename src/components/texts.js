@@ -21,9 +21,10 @@ const Texts = ({ texts }) => {
           display: "inline-block",
         }}
       >
-        {texts.map(text => (
-          <Text text={text} />
-        ))}
+        {texts.map(text => {
+          const { title } = text.data
+          return <Text key={title} text={text} />
+        })}
       </div>
     </section>
   )

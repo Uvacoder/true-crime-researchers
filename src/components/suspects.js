@@ -15,9 +15,10 @@ const Suspects = ({ suspects }) => {
       >
         Suspect
       </Styled.h2>
-      {suspects.map(suspect => (
-        <Suspect suspect={suspect}></Suspect>
-      ))}
+      {suspects.map(suspect => {
+        const { name } = suspect.data
+        return <Suspect key={name} suspect={suspect}></Suspect>
+      })}
     </section>
   )
 }

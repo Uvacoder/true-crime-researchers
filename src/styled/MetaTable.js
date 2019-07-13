@@ -1,7 +1,7 @@
 import styled from "@emotion/styled"
 
 export const MetaTable = styled.table`
-  tr:not(:first-child) td {
+  tr:not(:first-of-type) td {
     border-top: 1px dashed ${props => props.theme.colors.detail};
   }
 

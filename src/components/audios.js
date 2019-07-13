@@ -23,9 +23,10 @@ const Audios = ({ audios }) => {
           justifyContent: "center",
         }}
       >
-        {audios.map(audio => (
-          <Audio audio={audio}></Audio>
-        ))}
+        {audios.map(audio => {
+          const { title } = audio.data
+          return <Audio audio={audio} key={title}></Audio>
+        })}
       </Flex>
     </section>
   )
