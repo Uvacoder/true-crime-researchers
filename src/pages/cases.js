@@ -1,7 +1,7 @@
 import { Link, graphql } from "gatsby"
 
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx, Styled } from "theme-ui"
 
 import Layout from "components/layout"
 import SEO from "components/seo"
@@ -17,9 +17,9 @@ const CasesPage = ({ data }) => {
 
           return (
             <article key={title}>
-              <h2>
+              <Styled.h2>
                 {category}: {title}
-              </h2>
+              </Styled.h2>
               <p>
                 {status} {summary}
               </p>

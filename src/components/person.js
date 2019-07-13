@@ -18,7 +18,6 @@ const Person = ({ person }) => {
         sx={{
           bg: "background",
           boxShadow: "0 1px 2px rgba(0,0,0,0.1)",
-          borderTop: theme => `3px solid ${theme.colors.open}`,
           mt: 24,
           p: [8, null, 16],
           textAlign: "center",

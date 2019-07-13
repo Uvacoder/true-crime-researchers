@@ -1,5 +1,7 @@
-import React from "react"
 import Img from "gatsby-image"
+
+/** @jsx jsx */
+import { jsx, Styled } from "theme-ui"
 
 const Suspect = ({ suspect }) => {
   const {
@@ -17,7 +19,7 @@ const Suspect = ({ suspect }) => {
 
   return (
     <article key={`${name}`}>
-      <h2>{name}</h2>
+      <Styled.h2>{name}</Styled.h2>
 
       <table>
         {ethnicity && (

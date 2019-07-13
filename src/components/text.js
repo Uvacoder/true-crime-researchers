@@ -27,9 +27,6 @@ const Text = ({ text }) => {
   return (
     <article
       sx={{
-        bg: "background",
-        borderLeft: theme => `3px solid ${theme.colors.open}`,
-        boxShadow: "0 1px 2px rgba(0, 0, 0, 0.1)",
         padding: 8,
         mt: 12,
         textAlign: "left",
