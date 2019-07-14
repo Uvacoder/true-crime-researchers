@@ -12,11 +12,11 @@ export default {
   colors: {
     action: "#b94d5d",
     background: "#fff",
-    closed: "#008040",
     detail: "#dce0e8",
     mute: "#6b7c9f",
     open: "#bb573b",
     pending: "#b77706",
+    solved: "#008040",
     suspect: "#c70039",
     text: "#4f5d78",
     textInvert: "#ffffff",

@@ -2,6 +2,8 @@ import { graphql } from "gatsby"
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 
+import statusColor from "helpers/statusColor"
+
 import Audios from "components/audios"
 import Events from "components/events"
 import Layout from "components/layout"
@@ -81,7 +83,8 @@ const CasesTemplate = ({ data }) => {
                     py: [4, 4, 4, 8],
                   }}
                 >
-                  Status: <span sx={{ color: "open" }}>{status}</span>
+                  <span sx={{ color: "mute" }}>Status: </span>
+                  <span sx={{ color: statusColor(status) }}>{status}</span>
                 </span>
               </div>
             </span>
