@@ -6,6 +6,10 @@ export const List = styled.ol`
   padding: 0;
   width: 100%;
 
+  * {
+    box-sizing: border-box;
+  }
+
   .item {
     padding-left: 40px;
     position: relative;

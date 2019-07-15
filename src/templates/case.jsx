@@ -19,6 +19,8 @@ const CasesTemplate = ({ data }) => {
   const {
     audio,
     category,
+    centerLat,
+    centerLong,
     events,
     persons,
     places,
@@ -29,6 +31,7 @@ const CasesTemplate = ({ data }) => {
     title,
     victims,
     videos,
+    zoom,
   } = data.allAirtable.nodes[0].data.Cases[0].data
 
   return (
@@ -106,7 +109,14 @@ const CasesTemplate = ({ data }) => {
 
         {events && <Events events={events} />}
 
-        {places && <Places places={places} />}
+        {places && (
+          <Places
+            centerLat={centerLat}
+            centerLong={centerLong}
+            places={places}
+            zoom={zoom}
+          />
+        )}
 
         {persons && <Persons persons={persons} />}
 
@@ -126,15 +136,19 @@ export const query = graphql`
       filter: {
         data: { Cases: { elemMatch: { data: { Slug: { eq: $slug } } } } }
       }
+      sort: { fields: data___Places___data___Label }
     ) {
       nodes {
         data {
           Cases {
             data {
               category: Category
+              centerLat: Center_Latitude
+              centerLong: Center_Longitude
               status: Status
               summary: Summary
               title: Title
+              zoom: Zoom
               audio: Audio {
                 data {
                   itunes: iTunes
@@ -180,6 +194,7 @@ export const query = graphql`
               places: Places {
                 data {
                   description: Description
+                  label: Label
                   latitude: Latitude
                   longitude: Longitude
                   title: Title

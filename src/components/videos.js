@@ -16,7 +16,7 @@ const Videos = ({ videos }) => {
         Watch
       </Styled.h2>
       {videos.map(video => (
-        <Video video={video}></Video>
+        <Video key={video.data.title} video={video}></Video>
       ))}
     </section>
   )
