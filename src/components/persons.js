@@ -23,7 +23,7 @@ const Persons = ({ persons }) => {
         }}
       >
         {persons.map(person => (
-          <Person person={person}></Person>
+          <Person key={person.data.name} person={person}></Person>
         ))}
       </Flex>
     </section>

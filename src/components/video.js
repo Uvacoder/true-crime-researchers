@@ -40,8 +40,8 @@ const Video = ({ video }) => {
         >
           <iframe
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-            frameborder="0"
+            allowFullScreen
+            frameBorder="0"
             height="315"
             src={url}
             sx={{

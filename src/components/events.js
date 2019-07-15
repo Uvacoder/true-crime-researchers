@@ -19,7 +19,7 @@ const Events = ({ events }) => {
       </Styled.h2>
       <Timeline>
         {events.map(event => (
-          <Event event={event} />
+          <Event key={event.data.title} event={event} />
         ))}
       </Timeline>
     </section>

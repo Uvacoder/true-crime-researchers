@@ -10,22 +10,10 @@ const Layout = ({ children }) => (
     <Styled.root>
       <Global
         styles={css`
-          html {
-            box-sizing: border-box;
-          }
-          *,
-          *:before,
-          *:after {
-            box-sizing: inherit;
-          }
           body {
             background-image: url(${TextureImage});
             background-size: 412px 300px;
-            font-family: "canada-type-gibson, sans-serif";
             margin: 0;
-          }
-          img {
-            max-width: 100%;
           }
         `}
       />
