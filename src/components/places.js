@@ -1,4 +1,3 @@
-import { graphql, useStaticQuery } from "gatsby"
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api"
 /** @jsx jsx */
 import { Box, Flex, jsx, Styled } from "theme-ui"
