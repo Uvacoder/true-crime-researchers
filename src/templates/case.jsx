@@ -34,6 +34,8 @@ const CasesTemplate = ({ data }) => {
     zoom,
   } = data.allAirtable.nodes[0].data.Cases[0].data
 
+  const { googleMapsApiKey } = data.allSite.nodes[0].siteMetadata
+
   return (
     <Layout>
       <SEO title="Home" />
@@ -116,7 +118,7 @@ const CasesTemplate = ({ data }) => {
             centerLong={centerLong}
             places={places}
             zoom={zoom}
-            googleApiKey={data.allSite.nodes[0].siteMetadata.googleMapsApiKey}
+            googleApiKey={googleMapsApiKey}
           />
         )}
 
