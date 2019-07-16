@@ -3,7 +3,7 @@ import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api"
 /** @jsx jsx */
 import { Box, Flex, jsx, Styled } from "theme-ui"
 
-const Places = ({ centerLat, centerLong, googleApiKey, places, zoom }) => {
+const Places = ({ centerLat, centerLong, places, zoom }) => {
   return (
     <section sx={{ p: [16, 16, 24] }}>
       <Styled.h2
@@ -31,7 +31,10 @@ const Places = ({ centerLat, centerLong, googleApiKey, places, zoom }) => {
               p: 6,
             }}
           >
-            <LoadScript id="script-loader" googleMapsApiKey={googleApiKey}>
+            <LoadScript
+              id="script-loader"
+              googleMapsApiKey={process.env.GATSBY_GOOGLE_MAPS_API_KEY}
+            >
               <GoogleMap
                 id="marker-example"
                 mapContainerStyle={{
