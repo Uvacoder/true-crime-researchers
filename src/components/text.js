@@ -27,9 +27,12 @@ const Text = ({ text }) => {
   return (
     <article
       sx={{
-        padding: 8,
-        mt: 12,
+        borderBottom: theme => `1px dashed ${theme.colors.detail}`,
+        py: 16,
         textAlign: "left",
+        "&:last-of-type": {
+          borderBottom: 0,
+        },
       }}
     >
       <span

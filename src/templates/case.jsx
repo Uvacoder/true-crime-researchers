@@ -60,7 +60,8 @@ const CasesTemplate = ({ data }) => {
                 ],
                 fontWeight: "heavy",
                 lineHeight: "0.8",
-                margin: "0",
+                mb: 0,
+                mt: 16,
                 position: "relative",
                 textTransform: "uppercase",
               }}
@@ -183,7 +184,7 @@ export const query = graphql`
                   personPhoto: Person_Photo {
                     localFiles {
                       childImageSharp {
-                        fixed(width: 150) {
+                        fixed(width: 200) {
                           ...GatsbyImageSharpFixed
                         }
                       }

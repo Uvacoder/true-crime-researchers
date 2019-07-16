@@ -26,6 +26,7 @@ const Video = ({ video }) => {
       <Box
         sx={{
           bg: "background",
+          boxShadow: "0 1px 2px rgba(0,0,0,0.1)",
           p: 8,
           width: ["100%", null, null, null, null, "60%"],
         }}

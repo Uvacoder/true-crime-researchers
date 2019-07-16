@@ -1,8 +1,9 @@
-import React from "react"
 import { Link } from "gatsby"
-import { Styled } from "theme-ui"
+/** @jsx jsx */
+import { jsx, Styled } from "theme-ui"
 import { Global, css } from "@emotion/core"
 
+import LogoImage from "images/true-crime-researchers.svg"
 import TextureImage from "images/texture.jpg"
 
 const Layout = ({ children }) => (
@@ -17,13 +18,39 @@ const Layout = ({ children }) => (
           }
         `}
       />
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/cases" style={{ marginLeft: "20px" }}>
-          Cases
+      <header
+        sx={{
+          alignItems: "center",
+          display: "flex",
+          borderBottom: theme => `4px double ${theme.colors.detail}`,
+          justifyContent: "space-between",
+          p: 8,
+        }}
+      >
+        <Link to="/">
+          <img src={LogoImage} alt="True Crime Researchers" width={200} />
         </Link>
-      </nav>
+        <nav>
+          <Link
+            sx={{
+              color: "action",
+              fontWeight: "bold",
+            }}
+            to="/cases"
+          >
+            Cases
+          </Link>
+        </nav>
+      </header>
       {children}
+      <footer
+        sx={{
+          borderTop: theme => `4px double ${theme.colors.detail}`,
+          p: 8,
+        }}
+      >
+        Footer
+      </footer>
     </Styled.root>
   </>
 )

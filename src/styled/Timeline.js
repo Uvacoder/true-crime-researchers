@@ -16,6 +16,10 @@ export const List = styled.ol`
 
     &:last-of-type {
       padding-bottom: 0;
+
+      .marker:after {
+        display: none;
+      }
     }
   }
 
@@ -61,15 +65,11 @@ export const List = styled.ol`
       background: ${props => props.theme.colors.detail};
       content: "";
       display: block;
-      left: 6px;
+      left: 8px;
       position: absolute;
       top: 24px;
       bottom: 0;
       width: 1px;
-    }
-
-    .item:last-child &:after {
-      content: none;
     }
   }
 

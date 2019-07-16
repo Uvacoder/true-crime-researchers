@@ -96,8 +96,8 @@ const Places = ({ centerLat, centerLong, places, zoom }) => {
                   alignItems: "flex-start",
                   "&:not(:last-of-type)": {
                     borderBottom: theme => `1px dashed ${theme.colors.detail}`,
-                    mb: 8,
-                    pb: 7,
+                    mb: 12,
+                    pb: 12,
                   },
                 }}
               >
