@@ -10,18 +10,14 @@ const Persons = ({ persons }) => {
         sx={{
           fontSize: "calc(3vw + 3vh + 2.5vmin)",
           lineHeight: "single",
-          mb: 16,
+          mb: 24,
           mt: 0,
           textAlign: ["left", null, null, null, "center"],
         }}
       >
         Persons of Interest
       </Styled.h2>
-      <Flex
-        sx={{
-          flexWrap: "wrap",
-        }}
-      >
+      <Flex as="article" sx={{ flexWrap: "wrap" }}>
         {persons.map(person => (
           <Person key={person.data.name} person={person}></Person>
         ))}

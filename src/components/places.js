@@ -1,21 +1,9 @@
-import { useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api"
 /** @jsx jsx */
 import { Box, Flex, jsx, Styled } from "theme-ui"
 
-const Places = ({ centerLat, centerLong, places, zoom }) => {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            googleMapsApiKey
-          }
-        }
-      }
-    `
-  )
-
+const Places = ({ centerLat, centerLong, googleApiKey, places, zoom }) => {
   return (
     <section sx={{ p: [16, 16, 24] }}>
       <Styled.h2
@@ -43,10 +31,7 @@ const Places = ({ centerLat, centerLong, places, zoom }) => {
               p: 6,
             }}
           >
-            <LoadScript
-              id="script-loader"
-              googleMapsApiKey={site.siteMetadata.googleMapsApiKey}
-            >
+            <LoadScript id="script-loader" googleMapsApiKey={googleApiKey}>
               <GoogleMap
                 id="marker-example"
                 mapContainerStyle={{
@@ -96,8 +81,8 @@ const Places = ({ centerLat, centerLong, places, zoom }) => {
                   alignItems: "flex-start",
                   "&:not(:last-of-type)": {
                     borderBottom: theme => `1px dashed ${theme.colors.detail}`,
-                    mb: 8,
-                    pb: 7,
+                    mb: 12,
+                    pb: 12,
                   },
                 }}
               >

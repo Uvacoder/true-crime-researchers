@@ -21,7 +21,6 @@ const VictimsPage = ({ data }) => {
 
         <section>
           {data.allAirtable.nodes.map(victim => {
-            console.log(victim)
             return <Victim victim={victim}></Victim>
           })}
         </section>

@@ -23,26 +23,37 @@ const Audio = ({ audio }) => {
         display: "flex",
         maxWidth: "698px",
         order: 1,
-        p: 12,
+        px: 12,
         width: ["100%", null, null, null, null, "50%"],
       }}
     >
       <div
         sx={{
           alignItems: "center",
+          borderBottom: theme => `1px dashed ${theme.colors.detail}`,
           display: "flex",
           flexDirection: ["column", null, "row"],
+          py: 16,
           textAlign: "center",
           width: "100%",
         }}
       >
-        <Img
-          alt="{source}"
-          fixed={thumbnail.localFiles[0].childImageSharp.fixed}
+        <div
           sx={{
-            flexShrink: 0,
+            bg: "background",
+            boxShadow: "0 1px 2px rgba(0,0,0,0.1)",
+            display: "inline-flex",
+            p: 4,
           }}
-        />
+        >
+          <Img
+            alt="{source}"
+            fixed={thumbnail.localFiles[0].childImageSharp.fixed}
+            sx={{
+              flexShrink: 0,
+            }}
+          />
+        </div>
         <div
           sx={{
             mt: [8, null, 0],
