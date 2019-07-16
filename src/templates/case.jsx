@@ -116,7 +116,7 @@ const CasesTemplate = ({ data }) => {
             centerLong={centerLong}
             places={places}
             zoom={zoom}
-            googleApiKey={data.allSite.siteMetadata.googleMapsApiKey}
+            googleApiKey={data.allSite.nodes[0].siteMetadata.googleMapsApiKey}
           />
         )}
 
@@ -272,8 +272,10 @@ export const query = graphql`
       }
     }
     allSite {
-      siteMetadata {
-        googleMapsApiKey
+      nodes {
+        siteMetadata {
+          googleMapsApiKey
+        }
       }
     }
   }
