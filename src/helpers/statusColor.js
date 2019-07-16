@@ -1,5 +1,4 @@
 const statusColor = status => {
-  console.log(status)
   switch (status) {
     case "Open":
       return "open"
