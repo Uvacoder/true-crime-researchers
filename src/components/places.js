@@ -4,17 +4,15 @@ import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api"
 import { Box, Flex, jsx, Styled } from "theme-ui"
 
 const Places = ({ centerLat, centerLong, places, zoom }) => {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            googleMapsApiKey
-          }
+  const data = useStaticQuery(graphql`
+    query googleApiQuery {
+      site {
+        siteMetadata {
+          googleMapsApiKey
         }
       }
-    `
-  )
+    }
+  `)
 
   return (
     <section sx={{ p: [16, 16, 24] }}>
@@ -45,7 +43,7 @@ const Places = ({ centerLat, centerLong, places, zoom }) => {
           >
             <LoadScript
               id="script-loader"
-              googleMapsApiKey={site.siteMetadata.googleMapsApiKey}
+              googleMapsApiKey={data.site.siteMetadata.googleMapsApiKey}
             >
               <GoogleMap
                 id="marker-example"
