@@ -1,7 +1,7 @@
 import { Link, graphql } from "gatsby"
 
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
+import { Flex, Box, jsx, Styled } from "theme-ui"
 
 import Layout from "components/layout"
 import SEO from "components/seo"
@@ -11,22 +11,50 @@ const CasesPage = ({ data }) => {
     <Layout>
       <SEO title="Home" />
       <main>
-        <h1>Cases</h1>
-        {data.allAirtable.nodes.map(casefile => {
-          const { category, slug, summary, title, status } = casefile.data
+        <Styled.h1
+          sx={{
+            mx: [8, 16],
+            my: 8,
+          }}
+        >
+          Cases
+        </Styled.h1>
 
-          return (
-            <article key={title}>
-              <Styled.h2>
-                {category}: {title}
-              </Styled.h2>
-              <p>
-                {status} {summary}
-              </p>
-              <Link to={`cases/${slug}`}>View the Case</Link>
-            </article>
-          )
-        })}
+        <Flex
+          as="section"
+          sx={{
+            flexWrap: "wrap",
+          }}
+        >
+          {data.allAirtable.nodes.map(casefile => {
+            const { category, slug, title, status } = casefile.data
+
+            return (
+              <Box
+                as="article"
+                key={title}
+                sx={{
+                  padding: [8, 16],
+                  width: ["100%", null, null, "50%", null, "33.333333%"],
+                }}
+              >
+                <span>
+                  {category}: {status}
+                </span>
+                <h2
+                  sx={{
+                    fontSize: "24px",
+                    fontWeight: "heading",
+                  }}
+                >
+                  {title}
+                </h2>
+                <p></p>
+                <Link to={`cases/${slug}`}>View the Case</Link>
+              </Box>
+            )
+          })}
+        </Flex>
       </main>
     </Layout>
   )
@@ -40,7 +68,6 @@ export const query = graphql`
       nodes {
         data {
           title: Title
-          summary: Summary
           category: Category
           published: Published
           slug: Slug
