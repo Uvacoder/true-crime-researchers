@@ -70,49 +70,48 @@ const Audio = ({ audio }) => {
           <p sx={{ fontSize: "80%", mb: 8, mt: 4 }}>
             {convertRuntime(runtime)}
           </p>
-          <ul
-            sx={{
-              alignItems: "center",
-              display: "flex",
-              listStyle: "none",
-              m: 0,
-              p: 0,
-            }}
-          >
-            <li>
-              <Styled.a
-                href={itunes}
-                sx={{
-                  alignItems: "center",
-                  display: "flex",
-                }}
-              >
-                <img alt="iTunes" src={IconItunes} sx={{ mr: 4 }} width={32} />
-                iTunes
-              </Styled.a>
-            </li>
-            <li sx={{ ml: 16 }}>
-              <Styled.a
-                href={stitcher}
-                sx={{
-                  alignItems: "center",
-                  display: "flex",
-                }}
-              >
-                <img
-                  alt="Stitcher"
-                  src={IconStitcher}
-                  sx={{ mr: 4 }}
-                  width={48}
-                />
-                Stitcher
-              </Styled.a>
-            </li>
-          </ul>
+          <ThirdParty itunes={itunes} stitcher={stitcher} />
         </div>
       </div>
     </Box>
   )
 }
+
+const ThirdParty = ({ itunes, stitcher }) => (
+  <ul
+    sx={{
+      alignItems: "center",
+      display: "flex",
+      listStyle: "none",
+      m: 0,
+      p: 0,
+    }}
+  >
+    <li>
+      <Styled.a
+        href={itunes}
+        sx={{
+          alignItems: "center",
+          display: "flex",
+        }}
+      >
+        <img alt="iTunes" src={IconItunes} sx={{ mr: 4 }} width={32} />
+        iTunes
+      </Styled.a>
+    </li>
+    <li sx={{ ml: 16 }}>
+      <Styled.a
+        href={stitcher}
+        sx={{
+          alignItems: "center",
+          display: "flex",
+        }}
+      >
+        <img alt="Stitcher" src={IconStitcher} sx={{ mr: 4 }} width={48} />
+        Stitcher
+      </Styled.a>
+    </li>
+  </ul>
+)
 
 export default Audio
