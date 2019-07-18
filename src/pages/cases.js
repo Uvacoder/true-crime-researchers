@@ -6,7 +6,9 @@ import { Flex, Box, jsx, Styled } from "theme-ui"
 import Layout from "components/layout"
 import SEO from "components/seo"
 
-const CasesPage = ({ data }) => {
+const CasesPage = ({ props, data }) => {
+  console.log(data)
+
   return (
     <Layout>
       <SEO title="Home" />

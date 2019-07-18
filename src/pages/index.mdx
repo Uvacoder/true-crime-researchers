@@ -1,3 +1,16 @@
-## Home
+import { graphql } from "gatsby"
 
-Initial page in MDX
+<h1>{props.data.site.siteMetadata.title}</h1>
+
+<p>{props.data.site.siteMetadata.description}</p>
+
+export const pageQuery = graphql`
+  {
+    site {
+      siteMetadata {
+        description
+        title
+      }
+    }
+  }
+`
