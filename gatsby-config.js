@@ -3,7 +3,7 @@ require("dotenv").config()
 module.exports = {
   siteMetadata: {
     title: `True Crime Researchers`,
-    description: `A curated collection of information about missing persons and homicide cases.`,
+    description: `A curated collection of information about missing persons and homicides.`,
     author: `@tcresearchers`,
     googleMapsApiKey: `${process.env.GOOGLE_MAPS_API_KEY}`,
   },
