@@ -1,42 +1,42 @@
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
+/** @jsx jsx */
+import { jsx } from "theme-ui"
+
+import LogoImage from "images/true-crime-researchers.svg"
+
+const Header = () => {
+  return (
+    <header
+      sx={{
+        alignItems: "center",
+        display: "flex",
+        borderBottom: theme => `4px double ${theme.colors.detail}`,
+        justifyContent: "space-between",
+        p: 8,
       }}
     >
-      <h1 style={{ margin: 0 }}>
+      <Link to="/">
+        <img
+          src={LogoImage}
+          alt="True Crime Researchers"
+          sx={{ display: "block" }}
+          width={200}
+        />
+      </Link>
+      <nav>
         <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
+          sx={{
+            color: "action",
+            fontWeight: "bold",
           }}
+          to="/cases"
         >
-          {siteTitle}
+          Cases
         </Link>
-      </h1>
-    </div>
-  </header>
-)
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
+      </nav>
+    </header>
+  )
 }
 
 export default Header

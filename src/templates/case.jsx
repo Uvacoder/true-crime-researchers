@@ -5,6 +5,7 @@ import { jsx } from "theme-ui"
 import statusColor from "helpers/statusColor"
 
 import Audios from "components/audios"
+import CTA from "components/cta"
 import Events from "components/events"
 import Layout from "components/layout"
 import Persons from "components/persons"
@@ -21,6 +22,10 @@ const CasesTemplate = ({ data }) => {
     category,
     centerLat,
     centerLong,
+    ctaText,
+    ctaUrl,
+    ctaUrlText,
+    ctaPhone,
     events,
     persons,
     places,
@@ -106,6 +111,16 @@ const CasesTemplate = ({ data }) => {
           <p sx={{ mx: "auto", my: "0", maxWidth: "900px" }}>{summary}</p>
         </section>
 
+        {status !== "Closed" && (
+          <CTA
+            ctaPhone={ctaPhone}
+            ctaText={ctaText}
+            ctaUrl={ctaUrl}
+            ctaUrlText={ctaUrlText}
+            status={status}
+          />
+        )}
+
         {suspects && <Suspects suspects={suspects} />}
 
         {events && <Events events={events} />}
@@ -148,6 +163,10 @@ export const query = graphql`
               centerLong: Center_Longitude
               status: Status
               summary: Summary
+              ctaText: CTA_Text
+              ctaUrl: CTA_Url
+              ctaUrlText: CTA_Url_Text
+              ctaPhone: CTA_Phone
               title: Title
               zoom: Zoom
               audio: Audio {
