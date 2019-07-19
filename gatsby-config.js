@@ -72,6 +72,12 @@ module.exports = {
               "Victims",
               "Videos",
             ],
+            mapping: {
+              Facebook_Image: `fileNode`,
+              Instagram_Image: `fileNode`,
+              Instagram_Story_Image: `fileNode`,
+              Twitter_Image: `fileNode`,
+            },
           },
           {
             baseId: `appcAT8442e7faJRH`,

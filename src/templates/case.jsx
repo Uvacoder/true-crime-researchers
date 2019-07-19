@@ -10,6 +10,7 @@ import Events from "components/events"
 import Layout from "components/layout"
 import Persons from "components/persons"
 import Places from "components/places"
+import Share from "components/share"
 import Suspects from "components/suspects"
 import SEO from "components/seo"
 import Texts from "components/texts"
@@ -27,6 +28,9 @@ const CasesTemplate = ({ data }) => {
     ctaUrlText,
     ctaPhone,
     events,
+    Facebook_Image,
+    Instagram_Image,
+    Instagram_Story_Image,
     persons,
     places,
     status,
@@ -34,6 +38,7 @@ const CasesTemplate = ({ data }) => {
     summary,
     texts,
     title,
+    Twitter_Image,
     victims,
     videos,
     zoom,
@@ -141,6 +146,15 @@ const CasesTemplate = ({ data }) => {
         {audio && <Audios audios={audio} />}
 
         {texts && <Texts texts={texts} />}
+
+        {Facebook_Image && (
+          <Share
+            Facebook_Image={Facebook_Image}
+            Instagram_Image={Instagram_Image}
+            Instagram_Story_Image={Instagram_Story_Image}
+            Twitter_Image={Twitter_Image}
+          />
+        )}
       </main>
     </Layout>
   )
@@ -161,6 +175,33 @@ export const query = graphql`
               category: Category
               centerLat: Center_Latitude
               centerLong: Center_Longitude
+              Facebook_Image {
+                localFiles {
+                  childImageSharp {
+                    fixed(width: 600) {
+                      ...GatsbyImageSharpFixed
+                    }
+                  }
+                }
+              }
+              Instagram_Image {
+                localFiles {
+                  childImageSharp {
+                    fixed(width: 600) {
+                      ...GatsbyImageSharpFixed
+                    }
+                  }
+                }
+              }
+              Instagram_Story_Image {
+                localFiles {
+                  childImageSharp {
+                    fixed(width: 600) {
+                      ...GatsbyImageSharpFixed
+                    }
+                  }
+                }
+              }
               status: Status
               summary: Summary
               ctaText: CTA_Text
@@ -168,6 +209,15 @@ export const query = graphql`
               ctaUrlText: CTA_Url_Text
               ctaPhone: CTA_Phone
               title: Title
+              Twitter_Image {
+                localFiles {
+                  childImageSharp {
+                    fixed(width: 600) {
+                      ...GatsbyImageSharpFixed
+                    }
+                  }
+                }
+              }
               zoom: Zoom
               audio: Audio {
                 data {
