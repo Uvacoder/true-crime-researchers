@@ -53,7 +53,7 @@ const Text = ({ text }) => {
       </span>
 
       <Styled.a href={url}>
-        <Styled.h3 sx={{ mb: 3, mt: 0 }}>{title}</Styled.h3>
+        <h3 sx={{ fontSize: 6, fontWeight: 1, mb: 3, mt: 0 }}>{title}</h3>
       </Styled.a>
     </article>
   )

@@ -8,8 +8,6 @@ const Audios = ({ audios }) => {
     <section sx={{ px: 8, py: [16, 16, 24] }}>
       <Styled.h2
         sx={{
-          fontSize: "calc(3vw + 3vh + 2.5vmin)",
-          lineHeight: "single",
           mb: 8,
           textAlign: "center",
         }}

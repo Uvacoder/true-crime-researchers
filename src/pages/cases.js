@@ -46,7 +46,7 @@ const CasesPage = ({ props, data }) => {
                 <h2
                   sx={{
                     fontSize: "24px",
-                    fontWeight: "heading",
+                    fontWeight: 2,
                   }}
                 >
                   {title}

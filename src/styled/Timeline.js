@@ -35,7 +35,8 @@ export const List = styled.ol`
   }
 
   .title {
-    color: ${props => props.theme.colors.heading}
+    color: ${props => props.theme.colors.heading};
+    font-size: calc(1vw + 0.75vh + 0.75vmin);
     font-weight: 600;
     margin-bottom: 8px;
   }

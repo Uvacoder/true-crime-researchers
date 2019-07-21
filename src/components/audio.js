@@ -65,7 +65,7 @@ const Audio = ({ audio }) => {
             {source}
           </span>
           <Styled.a href={url}>
-            <Styled.h4 sx={{ mb: 0, mt: 0 }}>{title}</Styled.h4>
+            <h3 sx={{ fontSize: 6, fontWeight: 1, mb: 0, mt: 0 }}>{title}</h3>
           </Styled.a>
           <p sx={{ fontSize: "80%", mb: 8, mt: 4 }}>
             {convertRuntime(runtime)}

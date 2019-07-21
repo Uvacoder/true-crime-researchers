@@ -28,7 +28,7 @@ const Header = () => {
         <Link
           sx={{
             color: "action",
-            fontWeight: "bold",
+            fontWeight: 1,
           }}
           to="/cases"
         >

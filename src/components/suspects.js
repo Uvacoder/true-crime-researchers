@@ -32,8 +32,6 @@ const Suspects = ({ suspects }) => {
         <Styled.h2
           sx={{
             color: "textInvert",
-            fontSize: "calc(3vw + 3vh + 2.5vmin)",
-            lineHeight: "single",
             mb: 24,
             mt: 0,
             textAlign: "center",

@@ -1,6 +1,6 @@
 import { graphql } from "gatsby"
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx, Styled } from "theme-ui"
 
 import statusColor from "helpers/statusColor"
 
@@ -28,9 +28,9 @@ const CasesTemplate = ({ data }) => {
     ctaUrlText,
     ctaPhone,
     events,
-    Facebook_Image,
-    Instagram_Image,
-    Instagram_Story_Image,
+    facebookImage,
+    instagramImage,
+    instagramStoryImage,
     persons,
     places,
     status,
@@ -38,7 +38,7 @@ const CasesTemplate = ({ data }) => {
     summary,
     texts,
     title,
-    Twitter_Image,
+    twitterImage,
     victims,
     videos,
     zoom,
@@ -63,12 +63,16 @@ const CasesTemplate = ({ data }) => {
                 display: "block",
                 fontSize: [
                   "calc(2vw + 2vh + 12vmin)",
-                  "calc(2vw + 2vh + 12vmin)",
-                  "calc(2vw + 2vh + 12vmin)",
-                  "calc(2vw + 2vh + 12vmin)",
-                  "16rem",
+                  null,
+                  null,
+                  null,
+                  "calc(2vw + 2vh + 18vmin)",
+                  "calc(2vw + 2vh + 22vmin)",
+                  "calc(2vw + 2vh + 24vmin)",
+                  "calc(2vw + 2vh + 26vmin)",
+                  "calc(2vw + 2vh + 28vmin)",
                 ],
-                fontWeight: "heavy",
+                fontWeight: 2,
                 lineHeight: "0.8",
                 mb: 0,
                 mt: 16,
@@ -92,7 +96,7 @@ const CasesTemplate = ({ data }) => {
                       "16px",
                       "calc(1vw + 1vh + .5vmin)",
                     ],
-                    fontWeight: "bold",
+                    fontWeight: 1,
                     px: [2, 2, 2, 6],
                     py: [4, 4, 4, 8],
                   }}
@@ -106,13 +110,7 @@ const CasesTemplate = ({ data }) => {
 
           {victims && <Victims victims={victims} />}
 
-          <h1
-            sx={{
-              fontSize: "calc(2vw + 2vh + 1vmin)",
-            }}
-          >
-            {title}
-          </h1>
+          <Styled.h1>{title}</Styled.h1>
           <p sx={{ mx: "auto", my: "0", maxWidth: "900px" }}>{summary}</p>
         </section>
 
@@ -147,12 +145,12 @@ const CasesTemplate = ({ data }) => {
 
         {texts && <Texts texts={texts} />}
 
-        {Facebook_Image && (
+        {facebookImage && (
           <Share
-            Facebook_Image={Facebook_Image}
-            Instagram_Image={Instagram_Image}
-            Instagram_Story_Image={Instagram_Story_Image}
-            Twitter_Image={Twitter_Image}
+            facebookImage={facebookImage}
+            instagramImage={instagramImage}
+            instagramStoryImage={instagramStoryImage}
+            twitterImage={twitterImage}
           />
         )}
       </main>
@@ -175,29 +173,29 @@ export const query = graphql`
               category: Category
               centerLat: Center_Latitude
               centerLong: Center_Longitude
-              Facebook_Image {
+              facebookImage: Facebook_Image {
                 localFiles {
                   childImageSharp {
-                    fixed(width: 600) {
-                      ...GatsbyImageSharpFixed
+                    fluid(maxWidth: 600) {
+                      ...GatsbyImageSharpFluid
                     }
                   }
                 }
               }
-              Instagram_Image {
+              instagramImage: Instagram_Image {
                 localFiles {
                   childImageSharp {
-                    fixed(width: 600) {
-                      ...GatsbyImageSharpFixed
+                    fluid(maxWidth: 540) {
+                      ...GatsbyImageSharpFluid
                     }
                   }
                 }
               }
-              Instagram_Story_Image {
+              instagramStoryImage: Instagram_Story_Image {
                 localFiles {
                   childImageSharp {
-                    fixed(width: 600) {
-                      ...GatsbyImageSharpFixed
+                    fluid(maxWidth: 540) {
+                      ...GatsbyImageSharpFluid
                     }
                   }
                 }
@@ -209,11 +207,11 @@ export const query = graphql`
               ctaUrlText: CTA_Url_Text
               ctaPhone: CTA_Phone
               title: Title
-              Twitter_Image {
+              twitterImage: Twitter_Image {
                 localFiles {
                   childImageSharp {
-                    fixed(width: 600) {
-                      ...GatsbyImageSharpFixed
+                    fluid(maxWidth: 440) {
+                      ...GatsbyImageSharpFluid
                     }
                   }
                 }
