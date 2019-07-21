@@ -24,12 +24,16 @@ export default {
   fonts: {
     body: "canada-type-gibson, sans-serif",
   },
-  fontWeights: {
-    body: 400,
-    bold: 600,
-    heavy: 700,
-    heading: 600,
-  },
+  fontSizes: [
+    16,
+    "calc(2vw + 2vh + 1vmin)",
+    "calc(3vw + 3vh + 2.5vmin)",
+    "calc(1.25vw + 1.25vh + 1.25vmin)",
+    "calc(1.1vw + 1.1vh + 1.1vmin)",
+    "calc(1vw + 1vh + 1vmin)",
+    "calc(16px + 0.75vh + 0.75vmin)",
+  ],
+  fontWeights: [400, 600, 700],
   lineHeights: {
     body: 1.5,
     heading: 1.125,
@@ -143,33 +147,40 @@ export default {
       color: "text",
       fontFamily: "body",
       fontSize: ["16px", "16px", "16px", "calc(1vw + 1vh + .0125vmin)"],
-      fontWeight: "body",
+      fontWeight: 0,
       lineHeight: "body",
     },
     h1: {
-      fontWeight: "heavy",
+      fontSize: 1,
+      fontWeight: 2,
     },
     h2: {
-      fontWeight: "heavy",
+      fontSize: 2,
+      fontWeight: 2,
+      lineHeight: "single",
     },
     h3: {
-      fontWeight: "heading",
+      fontSize: 3,
+      fontWeight: 1,
     },
     h4: {
-      fontWeight: "heading",
+      fontSize: 4,
+      fontWeight: 1,
     },
     h5: {
-      fontWeight: "heading",
+      fontSize: 5,
+      fontWeight: 1,
     },
     h6: {
-      fontWeight: "heading",
+      fontSize: 6,
+      fontWeight: 1,
     },
     strong: {
-      fontWeight: "bold",
+      fontWeight: 1,
     },
     a: {
       color: "action",
-      fontWeight: "bold",
+      fontWeight: 1,
     },
     table: {
       borderCollapse: "separate",

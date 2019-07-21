@@ -1,6 +1,6 @@
 import { graphql } from "gatsby"
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx, Styled } from "theme-ui"
 
 import statusColor from "helpers/statusColor"
 
@@ -63,12 +63,16 @@ const CasesTemplate = ({ data }) => {
                 display: "block",
                 fontSize: [
                   "calc(2vw + 2vh + 12vmin)",
-                  "calc(2vw + 2vh + 12vmin)",
-                  "calc(2vw + 2vh + 12vmin)",
-                  "calc(2vw + 2vh + 12vmin)",
-                  "16rem",
+                  null,
+                  null,
+                  null,
+                  "calc(2vw + 2vh + 18vmin)",
+                  "calc(2vw + 2vh + 22vmin)",
+                  "calc(2vw + 2vh + 24vmin)",
+                  "calc(2vw + 2vh + 26vmin)",
+                  "calc(2vw + 2vh + 28vmin)",
                 ],
-                fontWeight: "heavy",
+                fontWeight: 2,
                 lineHeight: "0.8",
                 mb: 0,
                 mt: 16,
@@ -92,7 +96,7 @@ const CasesTemplate = ({ data }) => {
                       "16px",
                       "calc(1vw + 1vh + .5vmin)",
                     ],
-                    fontWeight: "bold",
+                    fontWeight: 1,
                     px: [2, 2, 2, 6],
                     py: [4, 4, 4, 8],
                   }}
@@ -106,13 +110,7 @@ const CasesTemplate = ({ data }) => {
 
           {victims && <Victims victims={victims} />}
 
-          <h1
-            sx={{
-              fontSize: "calc(2vw + 2vh + 1vmin)",
-            }}
-          >
-            {title}
-          </h1>
+          <Styled.h1>{title}</Styled.h1>
           <p sx={{ mx: "auto", my: "0", maxWidth: "900px" }}>{summary}</p>
         </section>
 
@@ -178,8 +176,8 @@ export const query = graphql`
               Facebook_Image {
                 localFiles {
                   childImageSharp {
-                    fixed(width: 600) {
-                      ...GatsbyImageSharpFixed
+                    fluid(maxWidth: 600) {
+                      ...GatsbyImageSharpFluid
                     }
                   }
                 }
@@ -187,8 +185,8 @@ export const query = graphql`
               Instagram_Image {
                 localFiles {
                   childImageSharp {
-                    fixed(width: 600) {
-                      ...GatsbyImageSharpFixed
+                    fluid(maxWidth: 540) {
+                      ...GatsbyImageSharpFluid
                     }
                   }
                 }
@@ -196,8 +194,8 @@ export const query = graphql`
               Instagram_Story_Image {
                 localFiles {
                   childImageSharp {
-                    fixed(width: 600) {
-                      ...GatsbyImageSharpFixed
+                    fluid(maxWidth: 540) {
+                      ...GatsbyImageSharpFluid
                     }
                   }
                 }
@@ -212,8 +210,8 @@ export const query = graphql`
               Twitter_Image {
                 localFiles {
                   childImageSharp {
-                    fixed(width: 600) {
-                      ...GatsbyImageSharpFixed
+                    fluid(maxWidth: 440) {
+                      ...GatsbyImageSharpFluid
                     }
                   }
                 }

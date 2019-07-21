@@ -1,7 +1,7 @@
 import React from "react"
 import Img from "gatsby-image"
 /** @jsx jsx */
-import { jsx, Styled, Flex } from "theme-ui"
+import { Box, jsx, Styled, Flex } from "theme-ui"
 
 const Share = ({
   Facebook_Image,
@@ -13,8 +13,6 @@ const Share = ({
     <section>
       <Styled.h2
         sx={{
-          fontSize: "calc(3vw + 3vh + 2.5vmin)",
-          lineHeight: "single",
           mb: [8, 8, 8, 8, 24],
           textAlign: "center",
         }}
@@ -24,39 +22,50 @@ const Share = ({
       <p sx={{ textAlign: "center" }}>
         Images with case info, for sharing on social networks.
       </p>
-      <Flex sx={{ flexWrap: "wrap" }}>
-        <figure>
+      <Flex sx={{ justifyContent: "center", flexWrap: "wrap" }}>
+        <Box
+          as="figure"
+          sx={{ m: 0, p: 8, width: ["100%", null, null, null, "50%"] }}
+        >
           <Img
             alt="a"
-            fixed={Instagram_Image.localFiles[0].childImageSharp.fixed}
+            fluid={Instagram_Image.localFiles[0].childImageSharp.fluid}
             width={540}
           />
           <figcaption>Sized for the Instagram Square</figcaption>
-        </figure>
-        <figure>
+        </Box>
+        <Box
+          as="figure"
+          sx={{ m: 0, p: 8, width: ["100%", null, null, null, "50%"] }}
+        >
           <Img
             alt="a"
-            fixed={Instagram_Story_Image.localFiles[0].childImageSharp.fixed}
+            fluid={Instagram_Story_Image.localFiles[0].childImageSharp.fluid}
             width={540}
           />
           <figcaption>Sized for the Instagram Story</figcaption>
-        </figure>
-        <figure>
+        </Box>
+        <Box
+          as="figure"
+          sx={{ m: 0, p: 8, width: ["100%", null, null, null, "50%"] }}
+        >
           <Img
             alt="a"
-            fixed={Facebook_Image.localFiles[0].childImageSharp.fixed}
-            width={600}
+            fluid={Facebook_Image.localFiles[0].childImageSharp.fluid}
           />
           <figcaption>Sized for the Facebook Timeline</figcaption>
-        </figure>
-        <figure>
+        </Box>
+        <Box
+          as="figure"
+          sx={{ m: 0, p: 8, width: ["100%", null, null, null, "50%"] }}
+        >
           <Img
             alt="a"
-            fixed={Twitter_Image.localFiles[0].childImageSharp.fixed}
+            fluid={Twitter_Image.localFiles[0].childImageSharp.fluid}
             width={440}
           />
           <figcaption>Sized for the Twitter Timeline</figcaption>
-        </figure>
+        </Box>
       </Flex>
     </section>
   )

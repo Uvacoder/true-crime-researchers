@@ -68,7 +68,6 @@ const Person = ({ person }) => {
       >
         <Styled.h3
           sx={{
-            fontSize: "calc(1.25vw + 1.25vh + 1vmin)",
             mb: 4,
             mt: 8,
           }}

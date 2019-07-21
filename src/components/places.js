@@ -7,8 +7,6 @@ const Places = ({ centerLat, centerLong, places, zoom }) => {
     <section sx={{ p: [16, 16, 24] }}>
       <Styled.h2
         sx={{
-          fontSize: "calc(3vw + 3vh + 2.5vmin)",
-          lineHeight: "single",
           mb: [8, 8, 8, 8, 24],
           textAlign: "center",
         }}
@@ -16,7 +14,7 @@ const Places = ({ centerLat, centerLong, places, zoom }) => {
         Places of Interest
       </Styled.h2>
 
-      <Flex sx={{ alignItems: "center", flexWrap: "wrap" }}>
+      <Flex sx={{ flexWrap: "wrap" }}>
         <Box
           sx={{
             flexGrow: 1,
@@ -105,14 +103,16 @@ const Places = ({ centerLat, centerLong, places, zoom }) => {
                   {label}
                 </Flex>
                 <Box>
-                  <Styled.h3
+                  <h3
                     sx={{
+                      fontWeight: 1,
+                      fontSize: 6,
                       mt: -2,
                       mb: 0,
                     }}
                   >
                     {title}
-                  </Styled.h3>
+                  </h3>
                   <p sx={{ m: 0 }}>{description}</p>
                 </Box>
               </Flex>

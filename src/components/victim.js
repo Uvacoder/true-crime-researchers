@@ -57,7 +57,6 @@ const Victim = ({ victim }) => {
       >
         <Styled.h3
           sx={{
-            fontSize: "calc(1.5vw + 1.5vh + 1vmin)",
             mb: 4,
           }}
         >
