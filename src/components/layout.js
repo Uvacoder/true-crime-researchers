@@ -24,7 +24,8 @@ const Layout = ({ children }) => (
       <footer
         sx={{
           borderTop: theme => `4px double ${theme.colors.detail}`,
-          p: 8,
+          px: 16,
+          py: 8,
         }}
       >
         Footer

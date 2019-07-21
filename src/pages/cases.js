@@ -1,14 +1,12 @@
 import { Link, graphql } from "gatsby"
-
+import Img from "gatsby-image"
 /** @jsx jsx */
 import { Flex, Box, jsx, Styled } from "theme-ui"
 
 import Layout from "components/layout"
 import SEO from "components/seo"
 
-const CasesPage = ({ props, data }) => {
-  console.log(data)
-
+const CasesPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Home" />
@@ -29,7 +27,7 @@ const CasesPage = ({ props, data }) => {
           }}
         >
           {data.allAirtable.nodes.map(casefile => {
-            const { category, slug, title, status } = casefile.data
+            const { category, slug, title, photo, status } = casefile.data
 
             return (
               <Box
@@ -40,19 +38,37 @@ const CasesPage = ({ props, data }) => {
                   width: ["100%", null, null, "50%", null, "33.333333%"],
                 }}
               >
+                {photo && (
+                  <figure
+                    sx={{
+                      bg: "background",
+                      boxShadow: "0 1px 2px rgba(0, 0, 0, 0.1)",
+                      m: 0,
+                      pb: 2,
+                      pl: 6,
+                      pr: 6,
+                      pt: 6,
+                    }}
+                  >
+                    <Img
+                      alt="Photo of {firstName} {lastName}"
+                      fixed={photo.localFiles[0].childImageSharp.fixed}
+                    />
+                  </figure>
+                )}
                 <span>
                   {category}: {status}
                 </span>
-                <h2
+                <h3
                   sx={{
-                    fontSize: "24px",
-                    fontWeight: 2,
+                    fontSize: 6,
+                    fontWeight: 1,
                   }}
                 >
                   {title}
-                </h2>
+                </h3>
                 <p></p>
-                <Link to={`cases/${slug}`}>View the Case</Link>
+                <Link to={`/cases/${slug}`}>View the Case</Link>
               </Box>
             )
           })}
@@ -92,7 +108,7 @@ export const query = graphql`
               photo: Photo {
                 localFiles {
                   childImageSharp {
-                    fluid(maxWidth: 260) {
+                    fixed(width: 260) {
                       src
                     }
                   }

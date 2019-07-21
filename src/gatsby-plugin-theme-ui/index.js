@@ -39,6 +39,7 @@ export default {
     heading: 1.125,
     single: 1,
   },
+  shadows: ["0 1px 2px rgba(0,0,0,0.1)"],
   space: [
     0,
     2,

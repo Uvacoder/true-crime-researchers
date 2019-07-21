@@ -13,7 +13,8 @@ const Header = () => {
         display: "flex",
         borderBottom: theme => `4px double ${theme.colors.detail}`,
         justifyContent: "space-between",
-        p: 8,
+        px: 16,
+        py: 8,
       }}
     >
       <Link to="/">

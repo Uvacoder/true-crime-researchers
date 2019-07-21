@@ -114,7 +114,7 @@ const CasesTemplate = ({ data }) => {
           <p sx={{ mx: "auto", my: "0", maxWidth: "900px" }}>{summary}</p>
         </section>
 
-        {status !== "Closed" && (
+        {status !== "Closed" && ctaText && (
           <CTA
             ctaPhone={ctaPhone}
             ctaText={ctaText}

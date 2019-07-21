@@ -36,11 +36,9 @@ const Victim = ({ victim }) => {
           sx={{
             bg: "background",
             boxShadow: "0 1px 2px rgba(0, 0, 0, 0.1)",
+            display: "flex",
             m: 0,
-            pb: 2,
-            pl: 6,
-            pr: 6,
-            pt: 6,
+            p: 6,
           }}
         >
           <Img
@@ -52,7 +50,7 @@ const Victim = ({ victim }) => {
 
       <Box
         sx={{
-          ml: 16,
+          ml: [0, 0, 16],
         }}
       >
         <Styled.h3
