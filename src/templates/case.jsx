@@ -28,9 +28,9 @@ const CasesTemplate = ({ data }) => {
     ctaUrlText,
     ctaPhone,
     events,
-    Facebook_Image,
-    Instagram_Image,
-    Instagram_Story_Image,
+    facebookImage,
+    instagramImage,
+    instagramStoryImage,
     persons,
     places,
     status,
@@ -38,7 +38,7 @@ const CasesTemplate = ({ data }) => {
     summary,
     texts,
     title,
-    Twitter_Image,
+    twitterImage,
     victims,
     videos,
     zoom,
@@ -145,12 +145,12 @@ const CasesTemplate = ({ data }) => {
 
         {texts && <Texts texts={texts} />}
 
-        {Facebook_Image && (
+        {facebookImage && (
           <Share
-            Facebook_Image={Facebook_Image}
-            Instagram_Image={Instagram_Image}
-            Instagram_Story_Image={Instagram_Story_Image}
-            Twitter_Image={Twitter_Image}
+            facebookImage={facebookImage}
+            instagramImage={instagramImage}
+            instagramStoryImage={instagramStoryImage}
+            twitterImage={twitterImage}
           />
         )}
       </main>
@@ -173,7 +173,7 @@ export const query = graphql`
               category: Category
               centerLat: Center_Latitude
               centerLong: Center_Longitude
-              Facebook_Image {
+              facebookImage: Facebook_Image {
                 localFiles {
                   childImageSharp {
                     fluid(maxWidth: 600) {
@@ -182,7 +182,7 @@ export const query = graphql`
                   }
                 }
               }
-              Instagram_Image {
+              instagramImage: Instagram_Image {
                 localFiles {
                   childImageSharp {
                     fluid(maxWidth: 540) {
@@ -191,7 +191,7 @@ export const query = graphql`
                   }
                 }
               }
-              Instagram_Story_Image {
+              instagramStoryImage: Instagram_Story_Image {
                 localFiles {
                   childImageSharp {
                     fluid(maxWidth: 540) {
@@ -207,7 +207,7 @@ export const query = graphql`
               ctaUrlText: CTA_Url_Text
               ctaPhone: CTA_Phone
               title: Title
-              Twitter_Image {
+              twitterImage: Twitter_Image {
                 localFiles {
                   childImageSharp {
                     fluid(maxWidth: 440) {

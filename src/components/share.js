@@ -4,10 +4,10 @@ import Img from "gatsby-image"
 import { Box, jsx, Styled, Flex } from "theme-ui"
 
 const Share = ({
-  Facebook_Image,
-  Instagram_Image,
-  Instagram_Story_Image,
-  Twitter_Image,
+  facebookImage,
+  instagramImage,
+  instagramStoryImage,
+  twitterImage,
 }) => {
   return (
     <section>
@@ -29,7 +29,7 @@ const Share = ({
         >
           <Img
             alt="a"
-            fluid={Instagram_Image.localFiles[0].childImageSharp.fluid}
+            fluid={instagramImage.localFiles[0].childImageSharp.fluid}
             width={540}
           />
           <figcaption>Sized for the Instagram Square</figcaption>
@@ -40,7 +40,7 @@ const Share = ({
         >
           <Img
             alt="a"
-            fluid={Instagram_Story_Image.localFiles[0].childImageSharp.fluid}
+            fluid={instagramStoryImage.localFiles[0].childImageSharp.fluid}
             width={540}
           />
           <figcaption>Sized for the Instagram Story</figcaption>
@@ -51,7 +51,7 @@ const Share = ({
         >
           <Img
             alt="a"
-            fluid={Facebook_Image.localFiles[0].childImageSharp.fluid}
+            fluid={facebookImage.localFiles[0].childImageSharp.fluid}
           />
           <figcaption>Sized for the Facebook Timeline</figcaption>
         </Box>
@@ -61,7 +61,7 @@ const Share = ({
         >
           <Img
             alt="a"
-            fluid={Twitter_Image.localFiles[0].childImageSharp.fluid}
+            fluid={twitterImage.localFiles[0].childImageSharp.fluid}
             width={440}
           />
           <figcaption>Sized for the Twitter Timeline</figcaption>
