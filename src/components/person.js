@@ -7,7 +7,7 @@ const Person = ({ person }) => {
   return (
     <Flex
       sx={{
-        flexWrap: ["wrap", null, null, "nowrap", null, "wrap"],
+        flexWrap: ["wrap", null, null, "nowrap"],
         width: ["100%", null, null, null, null, "50%"],
         "&:nth-child(even)": {
           borderLeft: [
@@ -26,16 +26,16 @@ const Person = ({ person }) => {
             null,
             0,
           ],
-          pl: [0, null, null, null, null, 24],
+          pl: [0, null, null, null, null, 16],
         },
         "&:nth-child(odd)": {
-          pr: [0, null, null, null, null, 24],
+          pr: [0, null, null, null, null, 16],
         },
         "&:not(:first-of-type)": {
-          pt: [24, null, null, null, null, 0],
+          pt: [16, null, null, null, null, 0],
         },
         "&:first-of-type": {
-          pb: [24, null, null, null, null, 0],
+          pb: [16, null, null, null, null, 0],
         },
       }}
     >
@@ -63,13 +63,13 @@ const Person = ({ person }) => {
       </Box>
       <Box
         sx={{
-          pl: [0, 0, 8, 16, null, 0],
+          pl: [0, 0, 8, 16],
         }}
       >
         <Styled.h3
           sx={{
             mb: 4,
-            mt: 8,
+            mt: 16,
           }}
         >
           {name}
