@@ -1,4 +1,4 @@
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import Img from "gatsby-image"
 /** @jsx jsx */
 import { Flex, Box, jsx, Styled } from "theme-ui"
@@ -46,7 +46,7 @@ const HomePage = ({ data }) => {
           >
             <img
               alt="placeholder"
-              src="http://placehold.it/1600x1200"
+              src="https://placehold.it/1600x1200"
               sx={{
                 display: "block",
                 maxWidth: "100%",
@@ -99,6 +99,7 @@ const HomePage = ({ data }) => {
               onMouseWheel=""
               width="100%"
               height="533"
+              title="Airtable Database"
               sx={{
                 background: "transparent",
                 boxShadow: 0,
