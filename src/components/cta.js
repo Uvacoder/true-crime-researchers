@@ -9,18 +9,26 @@ const CTA = ({ ctaPhone, ctaText, ctaUrl, ctaUrlText, status }) => {
       sx={{
         backgroundColor: statusColor(status),
         color: "textInvert",
+        fontSize: 6,
         mt: 32,
         p: 8,
-        textAlign: "center",
+        textAlign: ["left", null, null, null, "center"],
       }}
     >
-      {ctaText && ctaText}{" "}
-      {ctaUrlText && (
-        <a href={ctaUrl} sx={{ color: "textInvert" }}>
-          {ctaUrlText}
-        </a>
-      )}{" "}
-      {ctaPhone && ctaPhone}
+      <div
+        sx={{
+          margin: "0 auto",
+          maxWidth: "900px",
+        }}
+      >
+        {ctaText && ctaText}{" "}
+        {ctaUrlText && (
+          <a href={ctaUrl} sx={{ color: "textInvert" }}>
+            {ctaUrlText}
+          </a>
+        )}
+        {ctaPhone && ctaPhone}.
+      </div>
     </article>
   )
 }
