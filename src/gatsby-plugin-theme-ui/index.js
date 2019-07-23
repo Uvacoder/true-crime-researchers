@@ -31,7 +31,7 @@ export default {
     "calc(1.25vw + 1.25vh + 1.25vmin)",
     "calc(1.1vw + 1.1vh + 1.1vmin)",
     "calc(1vw + 1vh + 1vmin)",
-    "calc(16px + 0.75vh + 0.75vmin)",
+    "calc(14px + 0.75vh + 0.75vmin)",
   ],
   fontWeights: [400, 600, 700],
   lineHeights: {
