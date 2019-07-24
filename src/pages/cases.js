@@ -34,6 +34,7 @@ const CasesPage = ({ data }) => {
           sx={{
             bg: "background",
             boxShadow: "0 1px 2px rgba(0, 0, 0, 0.1)",
+            minHeight: "600px",
             p: 6,
           }}
         >
@@ -77,98 +78,91 @@ const CasesPage = ({ data }) => {
           }}
         >
           {data.allAirtable.nodes.map(casefile => {
-            const {
-              category,
-              slug,
-              title,
-              photo,
-              status,
-              twitterImage,
-            } = casefile.data
+            const { slug, title, status, instagramImage } = casefile.data
 
             return (
               <Box
                 as="article"
                 key={title}
                 sx={{
-                  px: [8, 16],
-                  pt: [8, 16],
-                  width: ["100%", null, null, "50%", null, "33.333333%"],
+                  pt: [8, 12],
+                  width: ["100%", null, null, null, "50%"],
+                  "&:nth-child(even)": {
+                    pl: [null, null, null, null, 8, null, 12],
+                  },
+                  "&:nth-child(odd)": {
+                    pr: [null, null, null, null, 8, null, 12],
+                  },
                 }}
               >
+                <div
+                  sx={{
+                    fontSize: [
+                      "16px",
+                      "16px",
+                      "16px",
+                      "calc(1vw + 1vh + .5vmin)",
+                    ],
+                    fontWeight: 1,
+                    mb: 4,
+                  }}
+                >
+                  <span sx={{ color: "mute" }}>Status: </span>
+                  <span sx={{ color: statusColor(status) }}>{status}</span>
+                </div>
                 <Flex
                   sx={{
+                    alignItems: "center",
                     borderBottom: theme => `1px dashed ${theme.colors.detail}`,
-                    flexDirection: "column",
-                    height: "100%",
-                    justifyContent: "space-between",
+                    flexWrap: ["wrap", null, "nowrap"],
                     pb: 16,
                   }}
                 >
-                  <div
+                  <Box
                     sx={{
-                      flexGrow: 1,
+                      flexShrink: 0,
                     }}
                   >
-                    <div
-                      sx={{
-                        alignItems: "center",
-                        display: "flex",
-                        pl: 6,
-                      }}
-                    >
-                      <span
-                        sx={{
-                          fontSize: [
-                            "16px",
-                            "16px",
-                            "16px",
-                            "calc(1vw + 1vh + .5vmin)",
-                          ],
-                          fontWeight: 1,
-                        }}
-                      >
-                        <span sx={{ color: "mute" }}>Status: </span>
-                        <span sx={{ color: statusColor(status) }}>
-                          {status}
-                        </span>
-                      </span>
-                    </div>
-                    {twitterImage && (
+                    {instagramImage && (
                       <figure
                         sx={{
                           bg: "background",
                           boxShadow: "0 1px 2px rgba(0, 0, 0, 0.1)",
                           m: 0,
                           p: 6,
+                          width: ["200px"],
                         }}
                       >
                         <Img
                           fluid={
-                            twitterImage.localFiles[0].childImageSharp.fluid
+                            instagramImage.localFiles[0].childImageSharp.fluid
                           }
                         />
                       </figure>
                     )}
+                  </Box>
+                  <Box
+                    sx={{
+                      pl: [null, null, 8, 12],
+                    }}
+                  >
                     <p
                       sx={{
-                        mb: 8,
-                        mt: 8,
-                        pl: 6,
+                        maxWidth: "480px",
+                        mt: [null, null, null, null, 0],
                       }}
                     >
                       {title}
                     </p>
-                  </div>
-                  <Link
-                    sx={{
-                      color: "action",
-                      ml: 6,
-                    }}
-                    to={`/cases/${slug}`}
-                  >
-                    View the Case
-                  </Link>
+                    <Link
+                      sx={{
+                        color: "action",
+                      }}
+                      to={`/cases/${slug}`}
+                    >
+                      View the Case
+                    </Link>
+                  </Box>
                 </Flex>
               </Box>
             )
@@ -186,17 +180,16 @@ export const query = graphql`
     ) {
       nodes {
         data {
-          category: Category
           centerLat: Center_Latitude
           centerLong: Center_Longitude
           published: Published
           slug: Slug
           status: Status
           title: Title
-          twitterImage: Twitter_Image {
+          instagramImage: Instagram_Image {
             localFiles {
               childImageSharp {
-                fluid(maxWidth: 440) {
+                fluid(maxWidth: 370) {
                   ...GatsbyImageSharpFluid
                 }
               }
