@@ -10,7 +10,6 @@ const Victims = ({ victims }) => {
         display: "flex",
         flexWrap: "wrap",
         justifyContent: "center",
-        pt: "16",
       }}
     >
       {victims.map(victim => {

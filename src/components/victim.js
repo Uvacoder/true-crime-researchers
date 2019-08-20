@@ -6,8 +6,9 @@ import { MetaTable } from "styled/MetaTable"
 
 const Victim = ({ victim }) => {
   const {
-    ethnicity,
     dateOfBirth,
+    discovered,
+    ethnicity,
     eyeColor,
     firstName,
     hairColor,
@@ -24,33 +25,43 @@ const Victim = ({ victim }) => {
 
   return (
     <Flex
-      as="article"
       sx={{
         alignItems: "flex-start",
         justifyContent: "center",
         flexWrap: "wrap",
+        pt: 16,
+        width: "100%",
       }}
     >
-      {photo != null && (
-        <figure
-          sx={{
-            bg: "background",
-            boxShadow: "0 1px 2px rgba(0, 0, 0, 0.1)",
-            display: "flex",
-            m: 0,
-            p: 6,
-          }}
-        >
-          <Img
-            alt="Photo of {firstName} {lastName}"
-            fixed={photo.localFiles[0].childImageSharp.fixed}
-          />
-        </figure>
-      )}
-
       <Box
         sx={{
-          ml: [0, 0, 16],
+          display: [null, null, "flex"],
+          justifyContent: "flex-end",
+          px: 8,
+          width: [null, null, "50%"],
+        }}
+      >
+        {photo != null && (
+          <figure
+            sx={{
+              bg: "background",
+              boxShadow: "0 1px 2px rgba(0, 0, 0, 0.1)",
+              display: "flex",
+              m: 0,
+              p: 6,
+            }}
+          >
+            <Img
+              alt="Photo of {firstName} {lastName}"
+              fixed={photo.localFiles[0].childImageSharp.fixed}
+            />
+          </figure>
+        )}
+      </Box>
+      <Box
+        sx={{
+          px: 8,
+          width: [null, null, "50%"],
         }}
       >
         <Styled.h3
@@ -111,6 +122,12 @@ const Victim = ({ victim }) => {
               <tr>
                 <td>Last Seen:</td>
                 <td>{lastSeen}</td>
+              </tr>
+            )}
+            {discovered && (
+              <tr>
+                <td>Discovered:</td>
+                <td>{discovered}</td>
               </tr>
             )}
             {dateOfBirth && (

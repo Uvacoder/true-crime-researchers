@@ -8,6 +8,7 @@ const Suspect = ({ suspect }) => {
   const {
     ethnicity,
     dateOfBirth,
+    description,
     eyeColor,
     name,
     hairColor,
@@ -109,6 +110,16 @@ const Suspect = ({ suspect }) => {
             )}
           </tbody>
         </MetaTable>
+
+        {description && (
+          <p
+            sx={{
+              maxWidth: [null, null, null, "300px", "500px", "600px"],
+            }}
+          >
+            {description}
+          </p>
+        )}
       </Box>
     </Flex>
   )

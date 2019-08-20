@@ -1,18 +1,20 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui"
 
+import statusColor from "helpers/statusColor"
+
 import Suspect from "components/suspect"
 
-const Suspects = ({ suspects }) => {
+const Suspects = ({ status, suspects }) => {
   return (
     <section
       sx={{
-        bg: "pending",
+        backgroundColor: statusColor(status),
         mt: 48,
         p: [16, 16, 24],
         position: "relative",
         "&:before": {
-          bg: "pending",
+          backgroundColor: statusColor(status),
           content: `""`,
           position: "absolute",
           top: "-50px",

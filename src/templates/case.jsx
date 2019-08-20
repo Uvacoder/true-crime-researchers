@@ -124,7 +124,7 @@ const CasesTemplate = ({ data }) => {
           />
         )}
 
-        {suspects && <Suspects suspects={suspects} />}
+        {suspects && <Suspects suspects={suspects} status={status} />}
 
         {events && <Events events={events} />}
 
@@ -271,6 +271,7 @@ export const query = graphql`
               suspects: Suspects {
                 data {
                   name: Name
+                  description: Description
                   ethnicity: Ethnicity
                   sex: Sex
                   heightInFeet: Height_in_feet
@@ -311,6 +312,7 @@ export const query = graphql`
                   hairColor: Hair_Color
                   eyeColor: Eye_Color
                   dateOfBirth: Date_of_Birth
+                  discovered: Discovered(formatString: "MMMM DD, YYYY")
                   nationality: Nationality
                   lastSeen: Last_Seen(formatString: "MMMM DD, YYYY")
                   photo: Photo {
