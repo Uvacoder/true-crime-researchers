@@ -22,7 +22,7 @@
     "gatsby-plugin-theme-ui": "^0.2.6",
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-airtable": "^2.0.8",
-    "gatsby-source-filesystem": "^2.1.2",
+    "gatsby-source-filesystem": "^2.1.18",
     "gatsby-transformer-sharp": "^2.2.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
