@@ -2,6 +2,7 @@ import React from "react"
 
 const Event = ({ event }) => {
   const { date, description, time, title } = event.data
+  console.log(event);
   return (
     <li className="item">
       <div className="info">
