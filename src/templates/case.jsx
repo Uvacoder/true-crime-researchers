@@ -240,6 +240,7 @@ export const query = graphql`
                 data {
                   date: Date(formatString: "MMMM DD, YYYY")
                   description: Description
+                  order: Order
                   time: Time(formatString: "hh:mm a")
                   title: Title
                 }
