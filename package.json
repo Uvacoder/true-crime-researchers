@@ -7,7 +7,7 @@
   "dependencies": {
     "@emotion/core": "^10.0.14",
     "@emotion/styled": "^10.0.14",
-    "@mdx-js/mdx": "^1.1.0",
+    "@mdx-js/mdx": "^1.5.1",
     "@mdx-js/react": "^1.1.6",
     "@react-google-maps/api": "^1.6.0",
     "dotenv": "^8.1.0",
