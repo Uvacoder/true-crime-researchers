@@ -154,15 +154,18 @@ export default {
     h1: {
       fontSize: 1,
       fontWeight: 2,
+      marginBottom: 0,
     },
     h2: {
       fontSize: 2,
       fontWeight: 2,
       lineHeight: "single",
+      marginBottom: 0,
     },
     h3: {
       fontSize: 3,
       fontWeight: 1,
+      marginBottom: 0,
     },
     h4: {
       fontSize: 4,

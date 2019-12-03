@@ -73,6 +73,7 @@ module.exports = {
               "Videos",
             ],
             mapping: {
+              Case_Image: `fileNode`,
               Facebook_Image: `fileNode`,
               Instagram_Image: `fileNode`,
               Instagram_Story_Image: `fileNode`,

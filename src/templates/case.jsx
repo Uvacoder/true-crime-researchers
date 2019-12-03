@@ -68,7 +68,7 @@ const CasesTemplate = ({ data }) => {
                   null,
                   "calc(2vw + 2vh + 18vmin)",
                   "calc(2vw + 2vh + 22vmin)",
-                  "calc(2vw + 2vh + 24vmin)",
+                  null,
                   "calc(2vw + 2vh + 26vmin)",
                   "calc(2vw + 2vh + 28vmin)",
                 ],
@@ -110,7 +110,13 @@ const CasesTemplate = ({ data }) => {
 
           {victims && <Victims victims={victims} />}
 
-          <Styled.h1>{title}</Styled.h1>
+          <Styled.h1
+            sx={{
+              mb: 16,
+            }}
+          >
+            {title}
+          </Styled.h1>
           <p sx={{ mx: "auto", my: "0", maxWidth: "900px" }}>{summary}</p>
         </section>
 
