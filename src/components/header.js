@@ -1,7 +1,8 @@
-import { Link } from "gatsby"
-
 /** @jsx jsx */
 import { jsx } from "theme-ui"
+import { Link } from "gatsby"
+
+import Nav from "components/nav"
 
 import LogoImage from "images/true-crime-researchers.svg"
 
@@ -25,27 +26,7 @@ const Header = () => {
           width={200}
         />
       </Link>
-      <nav>
-        <Link
-          sx={{
-            color: "action",
-            fontWeight: 1,
-            mr: 8,
-          }}
-          to="/about"
-        >
-          About
-        </Link>
-        <Link
-          sx={{
-            color: "action",
-            fontWeight: 1,
-          }}
-          to="/cases"
-        >
-          Cases
-        </Link>
-      </nav>
+      <Nav />
     </header>
   )
 }
