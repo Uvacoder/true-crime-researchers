@@ -21,7 +21,7 @@
     "gatsby-plugin-sharp": "^2.2.36",
     "gatsby-plugin-theme-ui": "^0.2.6",
     "gatsby-plugin-web-font-loader": "^1.0.4",
-    "gatsby-source-airtable": "^2.0.10",
+    "gatsby-source-airtable": "^2.0.12",
     "gatsby-source-filesystem": "^2.1.40",
     "gatsby-transformer-sharp": "^2.3.6",
     "prop-types": "^15.7.2",
