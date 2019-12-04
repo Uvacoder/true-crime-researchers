@@ -3,6 +3,7 @@ import React from "react"
 import { jsx, Styled } from "theme-ui"
 import { Global, css } from "@emotion/core"
 
+import Footer from "components/footer"
 import Header from "components/header"
 
 import TextureImage from "images/texture.jpg"
@@ -21,15 +22,7 @@ const Layout = ({ children }) => (
       />
       <Header />
       {children}
-      <footer
-        sx={{
-          borderTop: theme => `4px double ${theme.colors.detail}`,
-          px: 16,
-          py: 8,
-        }}
-      >
-        Footer
-      </footer>
+      <Footer />
     </Styled.root>
   </>
 )

@@ -78,7 +78,7 @@ const CasesPage = ({ data }) => {
           }}
         >
           {data.allAirtable.nodes.map(casefile => {
-            const { slug, title, status, instagramImage } = casefile.data
+            const { slug, title, status, caseImage } = casefile.data
 
             return (
               <Box
@@ -95,21 +95,6 @@ const CasesPage = ({ data }) => {
                   },
                 }}
               >
-                <div
-                  sx={{
-                    fontSize: [
-                      "16px",
-                      "16px",
-                      "16px",
-                      "calc(1vw + 1vh + .5vmin)",
-                    ],
-                    fontWeight: 1,
-                    mb: 4,
-                  }}
-                >
-                  <span sx={{ color: "mute" }}>Status: </span>
-                  <span sx={{ color: statusColor(status) }}>{status}</span>
-                </div>
                 <Flex
                   sx={{
                     alignItems: "center",
@@ -123,20 +108,20 @@ const CasesPage = ({ data }) => {
                       flexShrink: 0,
                     }}
                   >
-                    {instagramImage && (
+                    {caseImage && (
                       <figure
                         sx={{
                           bg: "background",
                           boxShadow: "0 1px 2px rgba(0, 0, 0, 0.1)",
                           m: 0,
-                          p: 6,
+                          pb: 2,
+                          px: 6,
+                          pt: 6,
                           width: ["200px"],
                         }}
                       >
                         <Img
-                          fluid={
-                            instagramImage.localFiles[0].childImageSharp.fluid
-                          }
+                          fixed={caseImage.localFiles[0].childImageSharp.fixed}
                         />
                       </figure>
                     )}
@@ -146,6 +131,21 @@ const CasesPage = ({ data }) => {
                       pl: [null, null, 8, 12],
                     }}
                   >
+                    <div
+                      sx={{
+                        fontSize: [
+                          "16px",
+                          "16px",
+                          "16px",
+                          "calc(1vw + 1vh + .5vmin)",
+                        ],
+                        fontWeight: 1,
+                        mb: 4,
+                      }}
+                    >
+                      <span sx={{ color: "mute" }}>Status: </span>
+                      <span sx={{ color: statusColor(status) }}>{status}</span>
+                    </div>
                     <p
                       sx={{
                         maxWidth: "480px",
@@ -186,11 +186,11 @@ export const query = graphql`
           slug: Slug
           status: Status
           title: Title
-          instagramImage: Instagram_Image {
+          caseImage: Case_Image {
             localFiles {
               childImageSharp {
-                fluid(maxWidth: 370) {
-                  ...GatsbyImageSharpFluid
+                fixed(width: 200) {
+                  ...GatsbyImageSharpFixed
                 }
               }
             }

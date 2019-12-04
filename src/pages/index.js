@@ -1,5 +1,4 @@
 import { graphql } from "gatsby"
-import Img from "gatsby-image"
 /** @jsx jsx */
 import { Flex, Box, jsx, Styled } from "theme-ui"
 
@@ -8,8 +7,6 @@ import SEO from "components/seo"
 
 const HomePage = ({ data }) => {
   const { description, title } = data.site.siteMetadata
-
-  console.log(data)
 
   return (
     <Layout>
