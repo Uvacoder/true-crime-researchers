@@ -1,4 +1,5 @@
-import { graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
+import Img from "gatsby-image"
 /** @jsx jsx */
 import { Flex, Box, jsx, Styled } from "theme-ui"
 
@@ -25,7 +26,7 @@ const HomePage = ({ data }) => {
             sx={{
               maxWidth: ["700px", null, null, null, null, "45%"],
               order: [null, null, null, null, null, 1],
-              pt: 16,
+              pt: [16, null, null, null, null, 0],
               pl: [null, null, null, null, null, 16],
               width: ["100%", null, null, null, null, "45%"],
             }}
@@ -41,14 +42,72 @@ const HomePage = ({ data }) => {
               width: ["100%", null, null, null, null, "55%"],
             }}
           >
-            <img
-              alt="placeholder"
-              src="https://placehold.it/1600x1200"
+            <Flex
               sx={{
-                display: "block",
-                maxWidth: "100%",
+                flexWrap: "wrap",
+                justifyContent: [
+                  "center",
+                  null,
+                  null,
+                  null,
+                  null,
+                  "flex-start",
+                ],
+                mx: -4,
               }}
-            />
+            >
+              {data.allAirtable.nodes.map(casefile => {
+                const { published, slug, caseImage } = casefile.data
+
+                return (
+                  published && (
+                    <Link
+                      key={slug}
+                      sx={{
+                        display: [
+                          "none",
+                          null,
+                          null,
+                          null,
+                          null,
+                          null,
+                          "block",
+                        ],
+                        "&:nth-child(1)": {
+                          display: "block",
+                        },
+                        "&:nth-child(2)": {
+                          display: "block",
+                        },
+                        "&:nth-child(3)": {
+                          display: [null, null, null, "block"],
+                        },
+                        "&:nth-child(4)": {
+                          display: [null, null, null, null, null, "block"],
+                        },
+                      }}
+                      to={`cases/${slug}`}
+                    >
+                      <figure
+                        sx={{
+                          bg: "background",
+                          boxShadow: "0 1px 2px rgba(0, 0, 0, 0.1)",
+                          m: 4,
+                          pb: 2,
+                          px: 6,
+                          pt: 6,
+                          width: ["200px"],
+                        }}
+                      >
+                        <Img
+                          fixed={caseImage.localFiles[0].childImageSharp.fixed}
+                        />
+                      </figure>
+                    </Link>
+                  )
+                )
+              })}
+            </Flex>
           </Box>
         </Flex>
         <Flex
@@ -115,6 +174,25 @@ export const query = graphql`
       siteMetadata {
         description
         title
+      }
+    }
+    allAirtable(
+      filter: { table: { eq: "Cases" }, data: { Published: { eq: "true" } } }
+    ) {
+      nodes {
+        data {
+          published: Published
+          slug: Slug
+          caseImage: Case_Image {
+            localFiles {
+              childImageSharp {
+                fixed(width: 200) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
