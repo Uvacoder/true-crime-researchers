@@ -318,7 +318,7 @@ export const query = graphql`
                   weight: Weight
                   hairColor: Hair_Color
                   eyeColor: Eye_Color
-                  dateOfBirth: Date_of_Birth
+                  dateOfBirth: Date_of_Birth(formatString: "MMMM DD, YYYY")
                   discovered: Discovered(formatString: "MMMM DD, YYYY")
                   nationality: Nationality
                   lastSeen: Last_Seen(formatString: "MMMM DD, YYYY")
