@@ -178,6 +178,7 @@ export const query = graphql`
     }
     allAirtable(
       filter: { table: { eq: "Cases" }, data: { Published: { eq: "true" } } }
+      limit: 6
     ) {
       nodes {
         data {
