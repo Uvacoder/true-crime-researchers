@@ -67,6 +67,7 @@ module.exports = {
               "Events",
               "Persons_of_Interest",
               "Places",
+              "Social_Embeds",
               "Suspects",
               "Texts",
               "Victims",
@@ -94,6 +95,11 @@ module.exports = {
           {
             baseId: `appcAT8442e7faJRH`,
             tableName: `Places`,
+            tableLinks: ["Cases"],
+          },
+          {
+            baseId: `appcAT8442e7faJRH`,
+            tableName: `Social_Embeds`,
             tableLinks: ["Cases"],
           },
           {
