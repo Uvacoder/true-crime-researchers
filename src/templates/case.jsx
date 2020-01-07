@@ -11,6 +11,7 @@ import Layout from "components/layout"
 import Persons from "components/persons"
 import Places from "components/places"
 import Share from "components/share"
+import Social from "components/social"
 import Suspects from "components/suspects"
 import SEO from "components/seo"
 import Texts from "components/texts"
@@ -33,6 +34,7 @@ const CasesTemplate = ({ data }) => {
     instagramStoryImage,
     persons,
     places,
+    socialEmbeds,
     status,
     suspects,
     summary,
@@ -150,6 +152,8 @@ const CasesTemplate = ({ data }) => {
         {audio && <Audios audios={audio} />}
 
         {texts && <Texts texts={texts} />}
+
+        {socialEmbeds && <Social socialEmbeds={socialEmbeds} />}
 
         {facebookImage && (
           <Share
@@ -273,6 +277,14 @@ export const query = graphql`
                   latitude: Latitude
                   longitude: Longitude
                   title: Title
+                }
+              }
+              socialEmbeds: Social_Embeds {
+                data {
+                  height: Height
+                  source: Source
+                  url: URL
+                  width: Width
                 }
               }
               suspects: Suspects {
