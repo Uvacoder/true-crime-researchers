@@ -55,15 +55,24 @@ const CasesPage = ({ data }) => {
               }}
             >
               {data.allAirtable.nodes.map(casefile => {
-                const { centerLat, centerLong } = casefile.data
-                console.log(casefile)
+                const {
+                  centerLat,
+                  centerLong,
+                  slug,
+                  titleShort,
+                } = casefile.data
+                const onMarkerClick = evt => {
+                  window.location = `/cases/${slug}`
+                }
                 return (
                   <Marker
-                    key="thing"
+                    key={slug}
                     position={{
                       lat: centerLat,
                       lng: centerLong,
                     }}
+                    onClick={onMarkerClick}
+                    title={titleShort}
                   />
                 )
               })}

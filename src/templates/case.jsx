@@ -217,6 +217,7 @@ export const query = graphql`
               ctaUrlText: CTA_Url_Text
               ctaPhone: CTA_Phone
               title: Title
+              titleShort: Title_Short
               twitterImage: Twitter_Image {
                 localFiles {
                   childImageSharp {
