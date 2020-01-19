@@ -22,7 +22,7 @@ export default {
     textInvert: "#ffffff",
   },
   fonts: {
-    body: "canada-type-gibson, sans-serif",
+    body: "canada-type-gibson, sans-serif, Verdana",
   },
   fontSizes: [
     16,

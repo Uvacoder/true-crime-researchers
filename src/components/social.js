@@ -22,9 +22,10 @@ const Social = ({ socialEmbeds }) => {
           return (
             <iframe
               allow="encrypted-media"
-              allowTransparency="true"
-              frameborder="0"
+              allowtransparency="true"
+              frameBorder="0"
               height={height}
+              key={url}
               scrolling="no"
               src={url}
               sx={{ border: "none", m: 16, overflow: "hidden" }}

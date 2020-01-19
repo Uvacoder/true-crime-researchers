@@ -21,7 +21,12 @@ const VictimsPage = ({ data }) => {
 
         <section>
           {data.allAirtable.nodes.map(victim => {
-            return <Victim victim={victim}></Victim>
+            return (
+              <Victim
+                key={`${victim.firstName}-${victim.lastName}`}
+                victim={victim}
+              ></Victim>
+            )
           })}
         </section>
       </main>

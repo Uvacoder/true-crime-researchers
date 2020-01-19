@@ -46,6 +46,8 @@ const CasesTemplate = ({ data }) => {
     zoom,
   } = data.allAirtable.nodes[0].data.Cases[0].data
 
+  const multiple = victims.length > 1
+
   return (
     <Layout>
       <SEO title="Home" />
@@ -110,7 +112,7 @@ const CasesTemplate = ({ data }) => {
             </span>
           </div>
 
-          {victims && <Victims victims={victims} />}
+          {victims && <Victims multiple={multiple} victims={victims} />}
 
           <Styled.h1
             sx={{
@@ -321,6 +323,7 @@ export const query = graphql`
               }
               victims: Victims {
                 data {
+                  description: Description
                   firstName: First_Name
                   middleName: Middle_Name
                   lastName: Last_Name

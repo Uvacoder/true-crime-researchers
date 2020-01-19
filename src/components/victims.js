@@ -1,9 +1,11 @@
+import React from "react"
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 
 import Victim from "components/victim"
+import VictimMultiple from "components/victim-multiple"
 
-const Victims = ({ victims }) => {
+const Victims = ({ multiple, victims }) => {
   return (
     <article
       sx={{
@@ -13,12 +15,18 @@ const Victims = ({ victims }) => {
       }}
     >
       {victims.map(victim => {
-        const { firstName, middleName, lastName } = victim
+        const { firstName, lastName } = victim.data
         return (
-          <Victim
-            key={`${firstName}-${middleName}-${lastName}`}
-            victim={victim}
-          ></Victim>
+          <>
+            {multiple ? (
+              <VictimMultiple
+                key={`${firstName}-${lastName}`}
+                victim={victim}
+              />
+            ) : (
+              <Victim key={`${firstName}-${lastName}`} victim={victim} />
+            )}
+          </>
         )
       })}
     </article>
