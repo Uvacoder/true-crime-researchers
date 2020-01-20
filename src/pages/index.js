@@ -163,6 +163,150 @@ const HomePage = ({ data }) => {
             ></iframe>
           </Box>
         </Flex>
+        <section
+          sx={{
+            px: 16,
+            py: 16,
+          }}
+        >
+          <Styled.h2 sx={{ m: 0, textAlign: "center" }}>Roadmap</Styled.h2>
+          <p sx={{ mt: 4, textAlign: "center" }}>
+            Features and cases that are in the queue for addition.
+          </p>
+          <Flex
+            as="section"
+            sx={{
+              alignItems: [null, null, null, null, null, "center"],
+              flexWrap: "wrap",
+              justifyContent: ["flex-start", null, "center"],
+            }}
+          >
+            <Box
+              sx={{
+                px: [16, null, 32],
+              }}
+            >
+              <Styled.h3 sx={{ my: 0 }}>Cases</Styled.h3>
+              <ul
+                sx={{
+                  listStyle: "none",
+                  m: 0,
+                  p: 0,
+                }}
+              >
+                <li
+                  sx={{
+                    borderBottom: theme => `1px dashed ${theme.colors.detail}`,
+                    py: 2,
+                  }}
+                >
+                  Gilgo Beach Four
+                </li>
+                <li
+                  sx={{
+                    borderBottom: theme => `1px dashed ${theme.colors.detail}`,
+                    py: 2,
+                  }}
+                >
+                  Long Island Victims
+                </li>
+                <li
+                  sx={{
+                    borderBottom: theme => `1px dashed ${theme.colors.detail}`,
+                    py: 2,
+                  }}
+                >
+                  Kelly Glover{" "}
+                </li>
+                <li
+                  sx={{
+                    borderBottom: theme => `1px dashed ${theme.colors.detail}`,
+                    py: 2,
+                  }}
+                >
+                  Jody LeCornu
+                </li>
+                <li
+                  sx={{
+                    borderBottom: theme => `1px dashed ${theme.colors.detail}`,
+                    py: 2,
+                  }}
+                >
+                  Jennifer Kesse
+                </li>
+                <li
+                  sx={{
+                    py: 2,
+                  }}
+                >
+                  Brittanee Drexel
+                </li>
+              </ul>
+            </Box>
+            <Box
+              sx={{
+                px: [16, null, 32],
+              }}
+            >
+              <Styled.h3 sx={{ mt: 0 }}>Features</Styled.h3>
+              <ul
+                sx={{
+                  listStyle: "none",
+                  m: 0,
+                  p: 0,
+                }}
+              >
+                <li
+                  sx={{
+                    borderBottom: theme => `1px dashed ${theme.colors.detail}`,
+                    py: 2,
+                  }}
+                >
+                  Blog / News entries
+                </li>
+                <li
+                  sx={{
+                    borderBottom: theme => `1px dashed ${theme.colors.detail}`,
+                    py: 2,
+                  }}
+                >
+                  “Poster only” video links
+                </li>
+                <li
+                  sx={{
+                    borderBottom: theme => `1px dashed ${theme.colors.detail}`,
+                    py: 2,
+                  }}
+                >
+                  “No photo” placeholders
+                </li>
+                <li
+                  sx={{
+                    borderBottom: theme => `1px dashed ${theme.colors.detail}`,
+                    py: 2,
+                  }}
+                >
+                  Social media meta
+                </li>
+                <li
+                  sx={{
+                    borderBottom: theme => `1px dashed ${theme.colors.detail}`,
+                    py: 2,
+                  }}
+                >
+                  Forms for airtable submissions
+                </li>
+                <li
+                  sx={{
+                    py: 2,
+                  }}
+                >
+                  Info cards on map pin
+                </li>
+              </ul>
+            </Box>
+          </Flex>
+        </section>
       </main>
     </Layout>
   )
