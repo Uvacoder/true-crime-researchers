@@ -4,7 +4,8 @@ import { graphql } from "gatsby"
 import { jsx } from "theme-ui"
 
 import Layout from "components/layout"
-import Victim from "components/victim"
+import VictimDeath from "components/victim-death"
+import VictimMissing from "components/victim-missing"
 import SEO from "components/seo"
 
 const VictimsPage = ({ data }) => {
@@ -21,11 +22,21 @@ const VictimsPage = ({ data }) => {
 
         <section>
           {data.allAirtable.nodes.map(victim => {
+            const { firstName, lastName, type } = victim.data
             return (
-              <Victim
-                key={`${victim.firstName}-${victim.lastName}`}
-                victim={victim}
-              ></Victim>
+              <>
+                {type === "Missing" ? (
+                  <VictimMissing
+                    key={`${firstName}-${lastName}`}
+                    victim={victim}
+                  />
+                ) : (
+                  <VictimDeath
+                    key={`${firstName}-${lastName}`}
+                    victim={victim}
+                  />
+                )}
+              </>
             )
           })}
         </section>

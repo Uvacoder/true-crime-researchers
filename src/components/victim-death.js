@@ -2,8 +2,20 @@ import Img from "gatsby-image"
 /** @jsx jsx */
 import { Box, Flex, jsx, Styled } from "theme-ui"
 
-const VictimMultiple = ({ victim }) => {
-  const { description, firstName, lastName, middleName, photo } = victim.data
+import { MetaTable } from "styled/MetaTable"
+
+const VictimDeath = ({ victim }) => {
+  const {
+    age,
+    dateOfBirth,
+    description,
+    discovered,
+    firstName,
+    lastName,
+    lastSeen,
+    middleName,
+    photo,
+  } = victim.data
 
   return (
     <Flex
@@ -52,10 +64,38 @@ const VictimMultiple = ({ victim }) => {
         >
           {firstName} {middleName && middleName} {lastName}
         </Styled.h3>
+        <MetaTable border={0} cellSpacing={0} cellPadding={0} sx={{ mb: 4 }}>
+          <tbody>
+            {lastSeen && (
+              <tr>
+                <td>Last Seen:</td>
+                <td>{lastSeen}</td>
+              </tr>
+            )}
+            {discovered && (
+              <tr>
+                <td>Discovered:</td>
+                <td>{discovered}</td>
+              </tr>
+            )}
+            {dateOfBirth && (
+              <tr>
+                <td>Date of Birth:</td>
+                <td>{dateOfBirth}</td>
+              </tr>
+            )}
+            {age && (
+              <tr>
+                <td>Age at the Time:</td>
+                <td>{age}</td>
+              </tr>
+            )}
+          </tbody>
+        </MetaTable>
         {description}
       </Box>
     </Flex>
   )
 }
 
-export default VictimMultiple
+export default VictimDeath

@@ -46,8 +46,6 @@ const CasesTemplate = ({ data }) => {
     zoom,
   } = data.allAirtable.nodes[0].data.Cases[0].data
 
-  const multiple = victims.length > 1
-
   return (
     <Layout>
       <SEO title="Home" />
@@ -112,7 +110,7 @@ const CasesTemplate = ({ data }) => {
             </span>
           </div>
 
-          {victims && <Victims multiple={multiple} victims={victims} />}
+          {victims && <Victims victims={victims} />}
 
           <Styled.h1
             sx={{
@@ -323,6 +321,7 @@ export const query = graphql`
               }
               victims: Victims {
                 data {
+                  age: Age_At_Time_Of_Event
                   description: Description
                   firstName: First_Name
                   middleName: Middle_Name
@@ -338,6 +337,7 @@ export const query = graphql`
                   discovered: Discovered(formatString: "MMMM DD, YYYY")
                   nationality: Nationality
                   lastSeen: Last_Seen(formatString: "MMMM DD, YYYY")
+                  type: Type
                   photo: Photo {
                     localFiles {
                       childImageSharp {

@@ -4,8 +4,9 @@ import { Box, Flex, jsx, Styled } from "theme-ui"
 
 import { MetaTable } from "styled/MetaTable"
 
-const Victim = ({ victim }) => {
+const VictimMissing = ({ victim }) => {
   const {
+    age,
     dateOfBirth,
     discovered,
     ethnicity,
@@ -136,6 +137,12 @@ const Victim = ({ victim }) => {
                 <td>{dateOfBirth}</td>
               </tr>
             )}
+            {age && (
+              <tr>
+                <td>Age at the Time:</td>
+                <td>{age}</td>
+              </tr>
+            )}
             {nationality && (
               <tr>
                 <td>Nationality:</td>
@@ -149,4 +156,4 @@ const Victim = ({ victim }) => {
   )
 }
 
-export default Victim
+export default VictimMissing
