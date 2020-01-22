@@ -1,3 +1,4 @@
+import React from "react"
 import { graphql } from "gatsby"
 
 /** @jsx jsx */
