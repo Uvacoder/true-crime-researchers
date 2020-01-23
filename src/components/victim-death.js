@@ -20,7 +20,7 @@ const VictimDeath = ({ victim }) => {
   return (
     <Flex
       sx={{
-        alignItems: "center",
+        alignItems: "flex-start",
         justifyContent: "center",
         flexWrap: "wrap",
         pt: 16,
@@ -52,6 +52,7 @@ const VictimDeath = ({ victim }) => {
       <Box
         sx={{
           px: 8,
+          pt: 8,
           width: [null, null, null, null, "50%"],
         }}
       >
