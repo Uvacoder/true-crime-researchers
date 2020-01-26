@@ -322,22 +322,24 @@ export const query = graphql`
               victims: Victims {
                 data {
                   age: Age_At_Time_Of_Event
-                  description: Description
-                  firstName: First_Name
-                  middleName: Middle_Name
-                  lastName: Last_Name
-                  ethnicity: Ethnicity
-                  sex: Sex
-                  heightInFeet: Height_in_feet
-                  heightInInches: Height_in_inches
-                  weight: Weight
-                  hairColor: Hair_Color
-                  eyeColor: Eye_Color
                   dateOfBirth: Date_of_Birth(formatString: "MMMM DD, YYYY")
                   discovered: Discovered(formatString: "MMMM DD, YYYY")
-                  nationality: Nationality
+                  description: Description
+                  ethnicity: Ethnicity
+                  eyeColor: Eye_Color
+                  firstName: First_Name
+                  hairColor: Hair_Color
+                  heightInFeet: Height_in_feet
+                  heightInInches: Height_in_inches
+                  lastName: Last_Name
                   lastSeen: Last_Seen(formatString: "MMMM DD, YYYY")
+                  middleName: Middle_Name
+                  nationality: Nationality
+                  namusCase: NamUs_Case
+                  namusURL: NamUs_URL
+                  sex: Sex
                   type: Type
+                  weight: Weight
                   photo: Photo {
                     localFiles {
                       childImageSharp {

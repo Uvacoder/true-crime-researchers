@@ -18,6 +18,8 @@ const VictimMissing = ({ victim }) => {
     lastName,
     lastSeen,
     middleName,
+    namusCase,
+    namusURL,
     nationality,
     photo,
     sex,
@@ -147,6 +149,14 @@ const VictimMissing = ({ victim }) => {
               <tr>
                 <td>Nationality:</td>
                 <td>{nationality}</td>
+              </tr>
+            )}
+            {namusCase && (
+              <tr>
+                <td>NamUS Case:</td>
+                <td>
+                  <Styled.a href={namusURL}>{namusCase}</Styled.a>
+                </td>
               </tr>
             )}
           </tbody>
