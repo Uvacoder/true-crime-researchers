@@ -14,6 +14,8 @@ const VictimDeath = ({ victim }) => {
     lastName,
     lastSeen,
     middleName,
+    namusCase,
+    namusURL,
     photo,
   } = victim.data
 
@@ -89,6 +91,14 @@ const VictimDeath = ({ victim }) => {
               <tr>
                 <td>Age at the Time:</td>
                 <td>{age}</td>
+              </tr>
+            )}
+            {namusCase && (
+              <tr>
+                <td>NamUS Case:</td>
+                <td>
+                  <Styled.a href={namusURL}>{namusCase}</Styled.a>
+                </td>
               </tr>
             )}
           </tbody>
