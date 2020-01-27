@@ -3,6 +3,7 @@ import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api"
 import { Box, Flex, jsx, Styled } from "theme-ui"
 
 const Places = ({ centerLat, centerLong, places, zoom }) => {
+  const sorted = places.sort((a, b) => (a.data.order > b.data.order ? 1 : -1))
   return (
     <section sx={{ p: [16, 16, 24] }}>
       <Styled.h2
@@ -44,7 +45,7 @@ const Places = ({ centerLat, centerLong, places, zoom }) => {
                   lng: centerLong,
                 }}
               >
-                {places.map(place => {
+                {sorted.map(place => {
                   const { label, latitude, longitude } = place.data
                   return (
                     <Marker

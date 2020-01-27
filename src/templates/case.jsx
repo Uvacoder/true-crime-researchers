@@ -277,6 +277,7 @@ export const query = graphql`
                   label: Label
                   latitude: Latitude
                   longitude: Longitude
+                  order: Order
                   title: Title
                 }
               }
