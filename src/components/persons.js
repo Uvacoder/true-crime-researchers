@@ -15,7 +15,7 @@ const Persons = ({ persons }) => {
       >
         Persons of Interest
       </Styled.h2>
-      <Flex as="article" sx={{ flexWrap: "wrap" }}>
+      <Flex as="article" sx={{ flexWrap: "wrap", justifyContent: "center" }}>
         {persons.map(person => (
           <Person key={person.data.name} person={person}></Person>
         ))}

@@ -200,38 +200,6 @@ const HomePage = ({ data }) => {
                     py: 2,
                   }}
                 >
-                  Gilgo Beach Four
-                </li>
-                <li
-                  sx={{
-                    borderBottom: theme => `1px dashed ${theme.colors.detail}`,
-                    py: 2,
-                  }}
-                >
-                  Long Island Victims
-                </li>
-                <li
-                  sx={{
-                    borderBottom: theme => `1px dashed ${theme.colors.detail}`,
-                    py: 2,
-                  }}
-                >
-                  Kelly Glover{" "}
-                </li>
-                <li
-                  sx={{
-                    borderBottom: theme => `1px dashed ${theme.colors.detail}`,
-                    py: 2,
-                  }}
-                >
-                  Jody LeCornu
-                </li>
-                <li
-                  sx={{
-                    borderBottom: theme => `1px dashed ${theme.colors.detail}`,
-                    py: 2,
-                  }}
-                >
                   Jennifer Kesse
                 </li>
                 <li
@@ -240,6 +208,13 @@ const HomePage = ({ data }) => {
                   }}
                 >
                   Brittanee Drexel
+                </li>
+                <li
+                  sx={{
+                    py: 2,
+                  }}
+                >
+                  Jabez Spann
                 </li>
               </ul>
             </Box>
@@ -271,14 +246,6 @@ const HomePage = ({ data }) => {
                   }}
                 >
                   “Poster only” video links
-                </li>
-                <li
-                  sx={{
-                    borderBottom: theme => `1px dashed ${theme.colors.detail}`,
-                    py: 2,
-                  }}
-                >
-                  “No photo” placeholders
                 </li>
                 <li
                   sx={{
