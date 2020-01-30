@@ -176,7 +176,7 @@ const HomePage = ({ data }) => {
           <Flex
             as="section"
             sx={{
-              alignItems: [null, null, null, null, null, "center"],
+              alignItems: [null, null, null, null, null, "flex-start"],
               flexWrap: "wrap",
               justifyContent: ["flex-start", null, "center"],
             }}
