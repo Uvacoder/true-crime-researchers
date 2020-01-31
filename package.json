@@ -13,7 +13,7 @@
     "dotenv": "^8.1.0",
     "gatsby": "^2.19.10",
     "gatsby-cli": "^2.8.28",
-    "gatsby-image": "^2.2.30",
+    "gatsby-image": "^2.2.39",
     "gatsby-plugin-manifest": "^2.2.34",
     "gatsby-plugin-mdx": "^1.0.69",
     "gatsby-plugin-offline": "^3.0.33",
