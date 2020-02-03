@@ -26,10 +26,10 @@ export default {
   },
   fontSizes: [
     16,
-    "calc(2vw + 2vh + 1vmin)",
+    "calc(1.5vw + 1.5vh + 1vmin)",
     "calc(3vw + 3vh + 2.5vmin)",
-    "calc(1.25vw + 1.25vh + 1.25vmin)",
     "calc(1.1vw + 1.1vh + 1.1vmin)",
+    "calc(1.1vw + 1vh + 1vmin)",
     "calc(1vw + 1vh + 1vmin)",
     "calc(14px + 0.75vh + 0.75vmin)",
   ],
@@ -147,13 +147,14 @@ export default {
     root: {
       color: "text",
       fontFamily: "body",
-      fontSize: ["16px", "16px", "16px", "calc(1vw + 1vh + .0125vmin)"],
+      fontSize: ["16px", "16px", "16px", "20px"],
       fontWeight: 0,
       lineHeight: "body",
     },
     h1: {
       fontSize: 1,
       fontWeight: 2,
+      lineHeight: 1.25,
       marginBottom: 0,
     },
     h2: {
@@ -165,19 +166,23 @@ export default {
     h3: {
       fontSize: 3,
       fontWeight: 1,
+      lineHeight: "heading",
       marginBottom: 0,
     },
     h4: {
       fontSize: 4,
       fontWeight: 1,
+      lineHeight: "heading",
     },
     h5: {
       fontSize: 5,
       fontWeight: 1,
+      lineHeight: "heading",
     },
     h6: {
       fontSize: 6,
       fontWeight: 1,
+      lineHeight: "heading",
     },
     strong: {
       fontWeight: 1,
