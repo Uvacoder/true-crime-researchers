@@ -17,6 +17,7 @@ import SEO from "components/seo"
 import Texts from "components/texts"
 import Victims from "components/victims"
 import Videos from "components/videos"
+import RelatedCases from "../components/related-cases"
 
 const CasesTemplate = ({ data }) => {
   const {
@@ -29,18 +30,14 @@ const CasesTemplate = ({ data }) => {
     ctaUrlText,
     ctaPhone,
     events,
-    facebookImage,
-    instagramImage,
-    instagramStoryImage,
     persons,
     places,
-    socialEmbeds,
+    relatedCases,
     status,
     suspects,
     summary,
     texts,
     title,
-    twitterImage,
     victims,
     videos,
     zoom,
@@ -153,16 +150,7 @@ const CasesTemplate = ({ data }) => {
 
         {texts && <Texts texts={texts} />}
 
-        {socialEmbeds && <Social socialEmbeds={socialEmbeds} />}
-
-        {facebookImage && (
-          <Share
-            facebookImage={facebookImage}
-            instagramImage={instagramImage}
-            instagramStoryImage={instagramStoryImage}
-            twitterImage={twitterImage}
-          />
-        )}
+        {RelatedCases && <RelatedCases relatedCases={relatedCases} />}
       </main>
     </Layout>
   )
@@ -278,6 +266,12 @@ export const query = graphql`
                   latitude: Latitude
                   longitude: Longitude
                   order: Order
+                  title: Title
+                }
+              }
+              relatedCases: Related_Cases {
+                data {
+                  slug: Slug
                   title: Title
                 }
               }

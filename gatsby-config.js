@@ -67,6 +67,7 @@ module.exports = {
               "Events",
               "Persons_of_Interest",
               "Places",
+              "Related_Cases",
               "Social_Embeds",
               "Suspects",
               "Texts",
