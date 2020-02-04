@@ -10,7 +10,6 @@ import Events from "components/events"
 import Layout from "components/layout"
 import Persons from "components/persons"
 import Places from "components/places"
-import Share from "components/share"
 import Social from "components/social"
 import Suspects from "components/suspects"
 import SEO from "components/seo"
@@ -33,6 +32,7 @@ const CasesTemplate = ({ data }) => {
     persons,
     places,
     relatedCases,
+    socialEmbeds,
     status,
     suspects,
     summary,
@@ -150,7 +150,9 @@ const CasesTemplate = ({ data }) => {
 
         {texts && <Texts texts={texts} />}
 
-        {RelatedCases && <RelatedCases relatedCases={relatedCases} />}
+        {socialEmbeds && <Social socialEmbeds={socialEmbeds} />}
+
+        {relatedCases && <RelatedCases relatedCases={relatedCases} />}
       </main>
     </Layout>
   )
