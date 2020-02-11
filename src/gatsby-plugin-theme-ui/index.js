@@ -22,7 +22,7 @@ export default {
     textInvert: "#ffffff",
   },
   fonts: {
-    body: "canada-type-gibson, sans-serif, Verdana",
+    body: "Gotham A, Gotham B, Verdana",
   },
   fontSizes: [
     16,
@@ -33,7 +33,7 @@ export default {
     "calc(1vw + 1vh + 1vmin)",
     "calc(14px + 0.75vh + 0.75vmin)",
   ],
-  fontWeights: [400, 600, 700],
+  fontWeights: [400, 800, 900],
   lineHeights: {
     body: 1.5,
     heading: 1.125,
@@ -147,7 +147,7 @@ export default {
     root: {
       color: "text",
       fontFamily: "body",
-      fontSize: ["16px", "16px", "16px", "20px"],
+      fontSize: ["16px", "16px", "16px", "18px"],
       fontWeight: 0,
       lineHeight: "body",
     },
