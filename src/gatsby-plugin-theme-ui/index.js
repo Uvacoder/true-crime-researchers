@@ -190,6 +190,10 @@ export default {
     a: {
       color: "action",
       fontWeight: 1,
+      transition: "opacity 0.3s",
+      "&:hover": {
+        opacity: 0.8,
+      },
     },
     table: {
       borderCollapse: "separate",

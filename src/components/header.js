@@ -22,8 +22,8 @@ const Header = () => {
         <img
           src={LogoImage}
           alt="True Crime Researchers"
-          sx={{ display: "block" }}
-          width={200}
+          sx={{ display: "block", width: [150, null, null, 200] }}
+          width={150}
         />
       </Link>
       <Nav />

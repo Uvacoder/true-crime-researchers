@@ -166,6 +166,11 @@ const CasesPage = ({ data }) => {
                     <Link
                       sx={{
                         color: "action",
+                        fontWeight: "bold",
+                        transition: "opacity 0.3s",
+                        "&:hover": {
+                          opacity: 0.8,
+                        },
                       }}
                       to={`/cases/${slug}`}
                     >

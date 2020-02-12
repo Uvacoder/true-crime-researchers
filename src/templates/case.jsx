@@ -61,12 +61,12 @@ const CasesTemplate = ({ data }) => {
               sx={{
                 display: "block",
                 fontSize: [
-                  "calc(2vw + 2vh + 12vmin)",
+                  "calc(2vw + 2vh + 7vmin)",
                   null,
                   null,
                   null,
                   "calc(2vw + 2vh + 18vmin)",
-                  "calc(2vw + 2vh + 22vmin)",
+                  "calc(2vw + 2vh + 21vmin)",
                   null,
                   "calc(2vw + 2vh + 26vmin)",
                   "calc(2vw + 2vh + 28vmin)",

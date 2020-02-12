@@ -41,6 +41,7 @@ const Text = ({ text }) => {
           color: "mute",
           display: "flex",
           fontSize: "75%",
+          fontWeight: "bold",
         }}
       >
         <img

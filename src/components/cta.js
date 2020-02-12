@@ -8,6 +8,7 @@ const CTA = ({ ctaPhone, ctaText, ctaUrl, ctaUrlText, status }) => {
     <article
       sx={{
         fontSize: 6,
+        fontWeight: "bold",
         mt: 16,
         p: 8,
         textAlign: ["left", null, null, null, "center"],
@@ -26,7 +27,14 @@ const CTA = ({ ctaPhone, ctaText, ctaUrl, ctaUrlText, status }) => {
       >
         {ctaText && ctaText}{" "}
         {ctaUrlText && (
-          <a href={ctaUrl} sx={{ color: statusColor(status) }}>
+          <a
+            href={ctaUrl}
+            sx={{
+              color: statusColor(status),
+              transition: "opacity 0.3s",
+              "&:hover": { opacity: "0.8" },
+            }}
+          >
             {ctaUrlText}
           </a>
         )}

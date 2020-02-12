@@ -25,6 +25,7 @@ export const List = styled.ol`
 
   .info {
     color: ${props => props.theme.colors.mute};
+    font-weight: 700;
     margin-bottom: 8px;
     text-transform: uppercase;
     white-space: nowrap;

@@ -67,7 +67,12 @@ const VictimDeath = ({ victim }) => {
         >
           {firstName} {middleName && middleName} {lastName}
         </Styled.h3>
-        <MetaTable border={0} cellSpacing={0} cellPadding={0} sx={{ mb: 4 }}>
+        <MetaTable
+          border={0}
+          cellSpacing={0}
+          cellPadding={0}
+          sx={{ mt: [8, null, null, null, 4], mb: 4 }}
+        >
           <tbody>
             {lastSeen && (
               <tr>

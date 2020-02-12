@@ -10,6 +10,10 @@ const Nav = () => (
         color: "action",
         fontWeight: 1,
         mr: 8,
+        transition: "opacity 0.3s",
+        "&:hover": {
+          opacity: 0.8,
+        },
       }}
       to="/about"
     >
@@ -19,6 +23,10 @@ const Nav = () => (
       sx={{
         color: "action",
         fontWeight: 1,
+        transition: "opacity 0.3s",
+        "&:hover": {
+          opacity: 0.8,
+        },
       }}
       to="/cases"
     >

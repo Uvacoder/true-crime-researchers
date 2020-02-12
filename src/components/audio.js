@@ -61,7 +61,14 @@ const Audio = ({ audio }) => {
             textAlign: "left",
           }}
         >
-          <span sx={{ fontSize: "75%", textTransform: "uppercase" }}>
+          <span
+            sx={{
+              color: "mute",
+              fontSize: "75%",
+              fontWeight: "bold",
+              textTransform: "uppercase",
+            }}
+          >
             {source}
           </span>
           <Styled.a href={url}>
